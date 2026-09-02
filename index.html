@@ -10,7 +10,7 @@ initial-scale=1.0,
 maximum-scale=1.0,
 user-scalable=no">
 
-<title>Phone </title>
+<title>Phone</title>
 
 <style>
 
@@ -43,18 +43,19 @@ body{
 /* ================= STATUS ================= */
 
 .status{
-    height:56px;
-    padding:7px 24px;
+    height:54px;
+
+    padding:6px 25px;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    background:#080808;
+    background:#000;
 
     color:#fff;
 
-    font-size:14px;
+    font-size:15px;
     font-weight:bold;
 }
 
@@ -64,37 +65,45 @@ body{
     gap:7px;
 }
 
-/* ================= CONTACT ================= */
+/* ================= CONTACT AREA ================= */
 
 .contact-area{
-    height:350px;
+    position:absolute;
+
+    top:54px;
+    left:0;
+    right:0;
+
+    height:calc(50dvh - 54px);
 
     background:#000;
 
-    padding:
-        13px 46px 0;
+    padding:8px 48px 0;
+
+    overflow:hidden;
 }
 
 .contact-row{
-    height:76px;
+    height:68px;
 
-    display:flex;
+    display:none;
+
     align-items:center;
 
-    gap:25px;
+    gap:24px;
 
     color:#fff;
 }
 
 .contact-icon{
-    width:44px;
-    min-width:44px;
-    height:44px;
+    width:45px;
+    min-width:45px;
+    height:45px;
 
     position:relative;
 }
 
-/* person */
+/* PERSON */
 
 .person-icon:before{
     content:"";
@@ -108,7 +117,7 @@ body{
 
     background:#fff;
 
-    left:13px;
+    left:14px;
     top:0;
 }
 
@@ -129,7 +138,7 @@ body{
     bottom:0;
 }
 
-/* video */
+/* VIDEO */
 
 .video-icon{
     border:4px solid #fff;
@@ -140,7 +149,6 @@ body{
     height:28px;
 
     margin-left:1px;
-    margin-top:6px;
 }
 
 .video-icon:after{
@@ -156,17 +164,15 @@ body{
     border-left:11px solid #fff;
 }
 
-/* message */
+/* MESSAGE */
 
 .message-icon{
-    width:44px;
+    width:45px;
     height:30px;
 
     border-radius:18px;
 
     background:#fff;
-
-    margin-top:4px;
 }
 
 .message-icon:after{
@@ -180,6 +186,8 @@ body{
     border-top:13px solid #fff;
     border-right:9px solid transparent;
 }
+
+/* TEXT */
 
 .contact-text{
     font-size:19px;
@@ -197,10 +205,9 @@ body{
     right:0;
     bottom:0;
 
-    height:
-        calc(100dvh - 406px);
+    height:50dvh;
 
-    min-height:420px;
+    min-height:610px;
 
     background:#5a484b;
 
@@ -210,12 +217,14 @@ body{
     display:flex;
 
     flex-direction:column;
+
+    overflow:hidden;
 }
 
 /* ================= NUMBER BAR ================= */
 
 .number-bar{
-    height:72px;
+    height:70px;
 
     flex-shrink:0;
 
@@ -226,8 +235,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:
-        0 65px;
+    padding:0 65px;
 
     color:#fff;
 }
@@ -237,7 +245,7 @@ body{
 
     text-align:center;
 
-    font-size:28px;
+    font-size:27px;
 
     font-weight:500;
 
@@ -250,16 +258,16 @@ body{
     text-overflow:ellipsis;
 }
 
-/* more */
+/* MORE */
 
 .more{
     position:absolute;
 
     left:27px;
-    top:25px;
+    top:24px;
 
     width:22px;
-    height:27px;
+    height:28px;
 
     display:flex;
 
@@ -280,13 +288,13 @@ body{
     border-radius:50%;
 }
 
-/* delete */
+/* DELETE */
 
 .delete-top{
     position:absolute;
 
-    right:23px;
-    top:19px;
+    right:22px;
+    top:18px;
 
     width:47px;
     height:36px;
@@ -305,8 +313,7 @@ body{
     width:34px;
     height:25px;
 
-    border:
-        3px solid #fff;
+    border:3px solid #fff;
 
     border-radius:5px;
 
@@ -321,14 +328,9 @@ body{
     left:-9px;
     top:3px;
 
-    border-top:
-        7px solid transparent;
-
-    border-bottom:
-        7px solid transparent;
-
-    border-right:
-        9px solid #fff;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    border-right:9px solid #fff;
 }
 
 .delete-body:after{
@@ -352,7 +354,7 @@ body{
     flex:1;
 
     padding:
-        0 28px 6px;
+        0 28px 5px;
 
     display:grid;
 
@@ -363,7 +365,7 @@ body{
         repeat(4,1fr);
 
     gap:
-        13px 25px;
+        12px 25px;
 }
 
 .key{
@@ -416,7 +418,7 @@ body{
 /* ================= CALL ================= */
 
 .call-area{
-    height:72px;
+    height:70px;
 
     flex-shrink:0;
 
@@ -431,7 +433,7 @@ body{
 
     max-width:72%;
 
-    height:56px;
+    height:55px;
 
     border:0;
 
@@ -478,7 +480,7 @@ body{
 /* ================= BOTTOM ================= */
 
 .bottom{
-    height:78px;
+    height:72px;
 
     flex-shrink:0;
 
@@ -495,11 +497,11 @@ body{
 
     background:#4d3e41;
 
-    padding-bottom:3px;
+    padding-bottom:2px;
 }
 
 .nav-item{
-    height:70px;
+    height:65px;
 
     display:flex;
 
@@ -517,14 +519,14 @@ body{
 
 .nav-icon{
     width:42px;
-    height:35px;
+    height:32px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    font-size:25px;
+    font-size:24px;
 }
 
 .nav-item.active{
@@ -533,7 +535,7 @@ body{
 
 .nav-item.active .nav-icon{
     width:65px;
-    height:45px;
+    height:43px;
 
     border-radius:27px;
 
@@ -556,8 +558,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    background:
-        rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
     padding:20px;
 }
@@ -634,8 +635,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    background:
-        rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
     padding:20px;
 }
@@ -868,19 +868,23 @@ body{
 
 /* ================= SMALL SCREEN ================= */
 
-@media(max-height:650px){
+@media(max-height:700px){
 
     .status{
-        height:44px;
+        height:45px;
     }
 
     .contact-area{
-        height:265px;
-        padding-top:3px;
+        top:45px;
+
+        height:
+            calc(50dvh - 45px);
+
+        padding-top:2px;
     }
 
     .contact-row{
-        height:57px;
+        height:56px;
     }
 
     .contact-text{
@@ -888,16 +892,15 @@ body{
     }
 
     .dialer{
-        height:
-            calc(100dvh - 309px);
+        min-height:500px;
     }
 
     .number-bar{
-        height:59px;
+        height:58px;
     }
 
     .display{
-        font-size:25px;
+        font-size:24px;
     }
 
     .keypad{
@@ -908,25 +911,26 @@ body{
     }
 
     .key{
-        font-size:25px;
+        font-size:24px;
     }
 
     .call-area{
-        height:63px;
+        height:62px;
     }
 
     .call{
-        height:52px;
-        font-size:23px;
+        height:50px;
+        font-size:22px;
     }
 
     .bottom{
-        height:63px;
+        height:60px;
     }
 
     .nav-item{
-        height:58px;
+        height:56px;
     }
+
 }
 
 </style>
@@ -936,26 +940,28 @@ body{
 
 <div class="app">
 
-<!-- STATUS -->
+<!-- ================= STATUS ================= -->
 
 <div class="status">
 
     <span id="clock">15:30</span>
 
     <div class="status-right">
-        <span> </span>
-        <span> </span>
-        <span> </span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
 </div>
 
 
-<!-- CONTACT AREA -->
+<!-- ================= CONTACT AREA ================= -->
 
-<div class="contact-area">
+<div class="contact-area" id="contactArea">
 
-    <div class="contact-row">
+    <!-- بعد رقمين -->
+
+    <div class="contact-row" id="createContact">
 
         <div class="contact-icon person-icon"></div>
 
@@ -966,7 +972,9 @@ body{
     </div>
 
 
-    <div class="contact-row">
+    <!-- بعد أول رقم -->
+
+    <div class="contact-row" id="addContact">
 
         <div class="contact-icon person-icon"></div>
 
@@ -977,7 +985,9 @@ body{
     </div>
 
 
-    <div class="contact-row">
+    <!-- بعد 3 أرقام -->
+
+    <div class="contact-row" id="videoCall">
 
         <div class="contact-icon video-icon"></div>
 
@@ -988,7 +998,9 @@ body{
     </div>
 
 
-    <div class="contact-row">
+    <!-- بعد 4 أرقام -->
+
+    <div class="contact-row" id="sendMessage">
 
         <div class="contact-icon message-icon"></div>
 
@@ -1001,7 +1013,7 @@ body{
 </div>
 
 
-<!-- DIALER -->
+<!-- ================= DIALER ================= -->
 
 <div class="dialer">
 
@@ -1029,7 +1041,7 @@ body{
     </div>
 
 
-    <!-- KEYPAD -->
+    <!-- ================= KEYPAD ================= -->
 
     <div class="keypad">
 
@@ -1106,7 +1118,7 @@ body{
     </div>
 
 
-    <!-- CALL -->
+    <!-- ================= CALL ================= -->
 
     <div class="call-area">
 
@@ -1123,15 +1135,13 @@ body{
     </div>
 
 
-    <!-- BOTTOM -->
+    <!-- ================= BOTTOM ================= -->
 
     <div class="bottom">
 
         <div class="nav-item">
 
-            <div class="nav-icon">
-                
-            </div>
+            <div class="nav-icon"></div>
 
             <div>
                 Recents
@@ -1142,9 +1152,7 @@ body{
 
         <div class="nav-item">
 
-            <div class="nav-icon">
-                
-            </div>
+            <div class="nav-icon"></div>
 
             <div>
                 Contacts
@@ -1356,6 +1364,100 @@ id="notification">
 let number = "";
 
 
+/* ================= CONTACT OPTIONS ================= */
+
+function updateContacts(){
+
+    const count =
+        number.replace(/\D/g,"").length;
+
+
+    const create =
+        document.getElementById(
+            "createContact"
+        );
+
+    const addContact =
+        document.getElementById(
+            "addContact"
+        );
+
+    const video =
+        document.getElementById(
+            "videoCall"
+        );
+
+    const message =
+        document.getElementById(
+            "sendMessage"
+        );
+
+
+    /*
+       مفيش رقم
+       نخفي الكل
+    */
+
+    create.style.display = "none";
+    addContact.style.display = "none";
+    video.style.display = "none";
+    message.style.display = "none";
+
+
+    /*
+       أول رقم
+       Add to contact
+    */
+
+    if(count >= 1){
+
+        addContact.style.display =
+            "flex";
+
+    }
+
+
+    /*
+       رقمين
+       Create new contact
+    */
+
+    if(count >= 2){
+
+        create.style.display =
+            "flex";
+
+    }
+
+
+    /*
+       3 أرقام
+       Video call
+    */
+
+    if(count >= 3){
+
+        video.style.display =
+            "flex";
+
+    }
+
+
+    /*
+       4 أرقام
+       Send message
+    */
+
+    if(count >= 4){
+
+        message.style.display =
+            "flex";
+
+    }
+
+}
+
+
 /* ================= ADD ================= */
 
 function add(value){
@@ -1364,6 +1466,8 @@ function add(value){
 
     document.getElementById("display")
     .textContent = number;
+
+    updateContacts();
 
 }
 
@@ -1377,6 +1481,8 @@ function backspace(){
 
     document.getElementById("display")
     .textContent = number;
+
+    updateContacts();
 
 }
 
@@ -1421,8 +1527,6 @@ function startCall(){
 
     }
 
-
-    /* المرحلة الأولى */
 
     showLoading(
         "تشغيل USSD..."
@@ -1510,11 +1614,6 @@ function checkPassword(){
         parts[1] || "0";
 
 
-    /*
-       المرحلة الثانية:
-       بعد كلمة السر
-    */
-
     document.getElementById("menu1")
     .style.display = "none";
 
@@ -1524,11 +1623,6 @@ function checkPassword(){
     );
 
 
-    /*
-       المرحلة الثالثة:
-       رسالة نجاح مؤقتة
-    */
-
     setTimeout(function(){
 
         document.getElementById("loadingText")
@@ -1537,10 +1631,6 @@ function checkPassword(){
 
     },1700);
 
-
-    /*
-       بعد انتهاء التحميل تظهر النتيجة
-    */
 
     setTimeout(function(){
 
@@ -1660,6 +1750,9 @@ function resetAll(){
     document.getElementById("error")
     .style.display = "none";
 
+
+    updateContacts();
+
 }
 
 
@@ -1740,7 +1833,12 @@ setInterval(
     60000
 );
 
+
+/* ================= INITIAL ================= */
+
+updateContacts();
+
 </script>
 
 </body>
-</html>
+    </html>
