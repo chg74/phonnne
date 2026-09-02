@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -44,7 +43,6 @@ body{
 
 .status{
     height:54px;
-
     padding:6px 25px;
 
     display:flex;
@@ -52,7 +50,6 @@ body{
     justify-content:space-between;
 
     background:#000;
-
     color:#fff;
 
     font-size:15px;
@@ -65,6 +62,7 @@ body{
     gap:7px;
 }
 
+
 /* ================= CONTACT AREA ================= */
 
 .contact-area{
@@ -74,11 +72,11 @@ body{
     left:0;
     right:0;
 
-    height:calc(50dvh - 54px);
+    height:calc(43dvh - 54px);
 
     background:#000;
 
-    padding:8px 48px 0;
+    padding:8px 42px 0;
 
     overflow:hidden;
 }
@@ -86,11 +84,11 @@ body{
 .contact-row{
     height:68px;
 
-    display:none;
+    display:flex;
 
     align-items:center;
 
-    gap:24px;
+    gap:22px;
 
     color:#fff;
 }
@@ -102,6 +100,7 @@ body{
 
     position:relative;
 }
+
 
 /* PERSON */
 
@@ -138,6 +137,7 @@ body{
     bottom:0;
 }
 
+
 /* VIDEO */
 
 .video-icon{
@@ -164,6 +164,7 @@ body{
     border-left:11px solid #fff;
 }
 
+
 /* MESSAGE */
 
 .message-icon{
@@ -187,6 +188,7 @@ body{
     border-right:9px solid transparent;
 }
 
+
 /* TEXT */
 
 .contact-text{
@@ -195,6 +197,7 @@ body{
 
     letter-spacing:-.3px;
 }
+
 
 /* ================= DIALER ================= */
 
@@ -205,14 +208,14 @@ body{
     right:0;
     bottom:0;
 
-    height:50dvh;
+    height:58dvh;
 
-    min-height:610px;
+    min-height:0;
 
     background:#5a484b;
 
     border-radius:
-        27px 27px 0 0;
+        28px 28px 0 0;
 
     display:flex;
 
@@ -221,10 +224,11 @@ body{
     overflow:hidden;
 }
 
+
 /* ================= NUMBER BAR ================= */
 
 .number-bar{
-    height:70px;
+    height:72px;
 
     flex-shrink:0;
 
@@ -258,12 +262,13 @@ body{
     text-overflow:ellipsis;
 }
 
-/* MORE */
+
+/* ================= MORE ================= */
 
 .more{
     position:absolute;
 
-    left:27px;
+    left:28px;
     top:24px;
 
     width:22px;
@@ -288,13 +293,14 @@ body{
     border-radius:50%;
 }
 
-/* DELETE */
+
+/* ================= DELETE ================= */
 
 .delete-top{
     position:absolute;
 
-    right:22px;
-    top:18px;
+    right:20px;
+    top:17px;
 
     width:47px;
     height:36px;
@@ -348,13 +354,14 @@ body{
     font-weight:bold;
 }
 
+
 /* ================= KEYPAD ================= */
 
 .keypad{
     flex:1;
 
     padding:
-        0 28px 5px;
+        0 27px 7px;
 
     display:grid;
 
@@ -365,15 +372,15 @@ body{
         repeat(4,1fr);
 
     gap:
-        12px 25px;
+        9px 24px;
 }
 
 .key{
     border:0;
 
-    min-height:55px;
+    min-height:0;
 
-    border-radius:38px;
+    border-radius:42px;
 
     background:#251e20;
 
@@ -386,7 +393,7 @@ body{
 
     flex-direction:column;
 
-    font-size:27px;
+    font-size:28px;
 
     font-weight:400;
 
@@ -415,10 +422,11 @@ body{
     background:#403638;
 }
 
+
 /* ================= CALL ================= */
 
 .call-area{
-    height:70px;
+    height:76px;
 
     flex-shrink:0;
 
@@ -433,7 +441,7 @@ body{
 
     max-width:72%;
 
-    height:55px;
+    height:57px;
 
     border:0;
 
@@ -476,6 +484,7 @@ body{
 
     font-weight:bold;
 }
+
 
 /* ================= BOTTOM ================= */
 
@@ -543,6 +552,7 @@ body{
 
     font-size:25px;
 }
+
 
 /* ================= LOADING ================= */
 
@@ -620,6 +630,7 @@ body{
         transform:rotate(360deg);
     }
 }
+
 
 /* ================= POPUP ================= */
 
@@ -764,6 +775,7 @@ body{
     margin-top:5px;
 }
 
+
 /* ================= NOTIFICATION ================= */
 
 .notification{
@@ -843,6 +855,7 @@ body{
 }
 
 @keyframes notificationIn{
+
     from{
         transform:translateY(-130%);
         opacity:0;
@@ -855,6 +868,7 @@ body{
 }
 
 @keyframes notificationOut{
+
     from{
         transform:translateY(0);
         opacity:1;
@@ -865,6 +879,7 @@ body{
         opacity:0;
     }
 }
+
 
 /* ================= SMALL SCREEN ================= */
 
@@ -878,13 +893,16 @@ body{
         top:45px;
 
         height:
-            calc(50dvh - 45px);
+            calc(43dvh - 45px);
 
-        padding-top:2px;
+        padding:
+            2px 35px 0;
     }
 
     .contact-row{
         height:56px;
+
+        gap:18px;
     }
 
     .contact-text{
@@ -892,7 +910,7 @@ body{
     }
 
     .dialer{
-        min-height:500px;
+        height:58dvh;
     }
 
     .number-bar{
@@ -904,14 +922,16 @@ body{
     }
 
     .keypad{
-        gap:8px 18px;
+        gap:7px 18px;
 
-        padding-left:24px;
-        padding-right:24px;
+        padding-left:23px;
+        padding-right:23px;
     }
 
     .key{
         font-size:24px;
+
+        border-radius:38px;
     }
 
     .call-area{
@@ -920,6 +940,7 @@ body{
 
     .call{
         height:50px;
+
         font-size:22px;
     }
 
@@ -940,6 +961,7 @@ body{
 
 <div class="app">
 
+
 <!-- ================= STATUS ================= -->
 
 <div class="status">
@@ -959,8 +981,6 @@ body{
 
 <div class="contact-area" id="contactArea">
 
-    <!-- بعد رقمين -->
-
     <div class="contact-row" id="createContact">
 
         <div class="contact-icon person-icon"></div>
@@ -971,8 +991,6 @@ body{
 
     </div>
 
-
-    <!-- بعد أول رقم -->
 
     <div class="contact-row" id="addContact">
 
@@ -985,8 +1003,6 @@ body{
     </div>
 
 
-    <!-- بعد 3 أرقام -->
-
     <div class="contact-row" id="videoCall">
 
         <div class="contact-icon video-icon"></div>
@@ -997,8 +1013,6 @@ body{
 
     </div>
 
-
-    <!-- بعد 4 أرقام -->
 
     <div class="contact-row" id="sendMessage">
 
@@ -1020,15 +1034,19 @@ body{
     <div class="number-bar">
 
         <div class="more">
+
             <i></i>
             <i></i>
             <i></i>
+
         </div>
+
 
         <div
             class="display"
             id="display">
         </div>
+
 
         <button
             class="delete-top"
@@ -1045,74 +1063,121 @@ body{
 
     <div class="keypad">
 
-        <button class="key"
-        onclick="add('1')">
+        <button
+            class="key"
+            onclick="add('1')">
+
             1
             <small>Q</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('2')">
+
+        <button
+            class="key"
+            onclick="add('2')">
+
             2
             <small>ABC</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('3')">
+
+        <button
+            class="key"
+            onclick="add('3')">
+
             3
             <small>DEF</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('4')">
+
+        <button
+            class="key"
+            onclick="add('4')">
+
             4
             <small>GHI</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('5')">
+
+        <button
+            class="key"
+            onclick="add('5')">
+
             5
             <small>JKL</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('6')">
+
+        <button
+            class="key"
+            onclick="add('6')">
+
             6
             <small>MNO</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('7')">
+
+        <button
+            class="key"
+            onclick="add('7')">
+
             7
             <small>PQRS</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('8')">
+
+        <button
+            class="key"
+            onclick="add('8')">
+
             8
             <small>TUV</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('9')">
+
+        <button
+            class="key"
+            onclick="add('9')">
+
             9
             <small>WXYZ</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('*')">
+
+        <button
+            class="key"
+            onclick="add('*')">
+
             *
+
         </button>
 
-        <button class="key"
-        onclick="add('0')">
+
+        <button
+            class="key"
+            onclick="add('0')">
+
             0
             <small>+</small>
+
         </button>
 
-        <button class="key"
-        onclick="add('#')">
+
+        <button
+            class="key"
+            onclick="add('#')">
+
             #
+
         </button>
 
     </div>
@@ -1141,7 +1206,9 @@ body{
 
         <div class="nav-item">
 
-            <div class="nav-icon"></div>
+            <div class="nav-icon">
+                ◷
+            </div>
 
             <div>
                 Recents
@@ -1152,7 +1219,9 @@ body{
 
         <div class="nav-item">
 
-            <div class="nav-icon"></div>
+            <div class="nav-icon">
+                ●●
+            </div>
 
             <div>
                 Contacts
@@ -1183,14 +1252,14 @@ body{
 <!-- ================= USSD LOADING ================= -->
 
 <div
-class="ussd-overlay"
-id="ussdLoading">
+    class="ussd-overlay"
+    id="ussdLoading">
 
     <div class="ussd-box">
 
         <div
-        class="ussd-title"
-        id="loadingText">
+            class="ussd-title"
+            id="loadingText">
 
             تشغيل USSD...
 
@@ -1206,8 +1275,8 @@ id="ussdLoading">
 <!-- ================= PASSWORD ================= -->
 
 <div
-class="overlay"
-id="menu1">
+    class="overlay"
+    id="menu1">
 
     <div class="popup">
 
@@ -1218,6 +1287,7 @@ id="menu1">
             Carrier info
 
         </div>
+
 
         <div class="message">
 
@@ -1237,33 +1307,37 @@ id="menu1">
 
         </div>
 
+
         <div
-        class="error"
-        id="error">
+            class="error"
+            id="error">
 
             الرقم السري غير صحيح
 
         </div>
 
+
         <input
-        id="password"
-        class="input"
-        type="password"
-        inputmode="numeric">
+            id="password"
+            class="input"
+            type="password"
+            inputmode="numeric">
+
 
         <div class="buttons">
 
             <button
-            class="cancel"
-            onclick="closeMenu()">
+                class="cancel"
+                onclick="closeMenu()">
 
                 Cancel
 
             </button>
 
+
             <button
-            class="send"
-            onclick="checkPassword()">
+                class="send"
+                onclick="checkPassword()">
 
                 Send
 
@@ -1279,8 +1353,8 @@ id="menu1">
 <!-- ================= RESULT ================= -->
 
 <div
-class="overlay"
-id="menu2">
+    class="overlay"
+    id="menu2">
 
     <div class="popup">
 
@@ -1292,10 +1366,12 @@ id="menu2">
 
         </div>
 
+
         <div
-        class="message"
-        id="result">
+            class="message"
+            id="result">
         </div>
+
 
         <div class="message">
 
@@ -1303,23 +1379,26 @@ id="menu2">
 
         </div>
 
+
         <input
-        class="input"
-        type="text">
+            class="input"
+            type="text">
+
 
         <div class="buttons">
 
             <button
-            class="cancel"
-            onclick="resetAll()">
+                class="cancel"
+                onclick="resetAll()">
 
                 Cancel
 
             </button>
 
+
             <button
-            class="send"
-            onclick="resetAll()">
+                class="send"
+                onclick="resetAll()">
 
                 Send
 
@@ -1335,12 +1414,13 @@ id="menu2">
 <!-- ================= NOTIFICATION ================= -->
 
 <div
-class="notification"
-id="notification">
+    class="notification"
+    id="notification">
 
     <div class="icon">
         ✓
     </div>
+
 
     <div class="notif-content">
 
@@ -1351,6 +1431,7 @@ id="notification">
         <span id="notifText"></span>
 
     </div>
+
 
     <div class="notif-time">
         الآن
@@ -1370,7 +1451,6 @@ function updateContacts(){
 
     const count =
         number.replace(/\D/g,"").length;
-
 
     const create =
         document.getElementById(
@@ -1393,21 +1473,14 @@ function updateContacts(){
         );
 
 
-    /*
-       مفيش رقم
-       نخفي الكل
-    */
-
     create.style.display = "none";
+
     addContact.style.display = "none";
+
     video.style.display = "none";
+
     message.style.display = "none";
 
-
-    /*
-       أول رقم
-       Add to contact
-    */
 
     if(count >= 1){
 
@@ -1417,11 +1490,6 @@ function updateContacts(){
     }
 
 
-    /*
-       رقمين
-       Create new contact
-    */
-
     if(count >= 2){
 
         create.style.display =
@@ -1430,11 +1498,6 @@ function updateContacts(){
     }
 
 
-    /*
-       3 أرقام
-       Video call
-    */
-
     if(count >= 3){
 
         video.style.display =
@@ -1442,11 +1505,6 @@ function updateContacts(){
 
     }
 
-
-    /*
-       4 أرقام
-       Send message
-    */
 
     if(count >= 4){
 
@@ -1464,8 +1522,9 @@ function add(value){
 
     number += value;
 
-    document.getElementById("display")
-    .textContent = number;
+    document.getElementById(
+        "display"
+    ).textContent = number;
 
     updateContacts();
 
@@ -1479,8 +1538,9 @@ function backspace(){
     number =
         number.slice(0,-1);
 
-    document.getElementById("display")
-    .textContent = number;
+    document.getElementById(
+        "display"
+    ).textContent = number;
 
     updateContacts();
 
@@ -1491,19 +1551,22 @@ function backspace(){
 
 function showLoading(text){
 
-    document.getElementById("loadingText")
-    .textContent = text;
+    document.getElementById(
+        "loadingText"
+    ).textContent = text;
 
-    document.getElementById("ussdLoading")
-    .style.display = "flex";
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "flex";
 
 }
 
 
 function hideLoading(){
 
-    document.getElementById("ussdLoading")
-    .style.display = "none";
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "none";
 
 }
 
@@ -1537,18 +1600,18 @@ function startCall(){
 
         hideLoading();
 
-
-        document.getElementById("menu1")
-        .style.display = "flex";
+        document.getElementById(
+            "menu1"
+        ).style.display = "flex";
 
 
         setTimeout(function(){
 
-            document.getElementById("password")
-            .focus();
+            document.getElementById(
+                "password"
+            ).focus();
 
         },150);
-
 
     },2000);
 
@@ -1559,14 +1622,19 @@ function startCall(){
 
 function closeMenu(){
 
-    document.getElementById("menu1")
-    .style.display = "none";
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
 
-    document.getElementById("password")
-    .value = "";
 
-    document.getElementById("error")
-    .style.display = "none";
+    document.getElementById(
+        "password"
+    ).value = "";
+
+
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 
 }
 
@@ -1576,30 +1644,39 @@ function closeMenu(){
 function checkPassword(){
 
     const password =
-        document.getElementById("password")
-        .value.trim();
+        document.getElementById(
+            "password"
+        ).value.trim();
 
 
     if(password !== "500500"){
 
-        document.getElementById("error")
-        .style.display = "block";
+        document.getElementById(
+            "error"
+        ).style.display = "block";
 
         return;
 
     }
 
 
-    document.getElementById("error")
-    .style.display = "none";
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 
 
     let data =
-        number.replace("*9*7*","");
+        number.replace(
+            "*9*7*",
+            ""
+        );
 
 
     data =
-        data.replace(/#$/,"");
+        data.replace(
+            /#$/,
+            ""
+        );
 
 
     let parts =
@@ -1614,8 +1691,9 @@ function checkPassword(){
         parts[1] || "0";
 
 
-    document.getElementById("menu1")
-    .style.display = "none";
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
 
 
     showLoading(
@@ -1625,8 +1703,9 @@ function checkPassword(){
 
     setTimeout(function(){
 
-        document.getElementById("loadingText")
-        .textContent =
+        document.getElementById(
+            "loadingText"
+        ).textContent =
             "تشغيل USSD...";
 
     },1700);
@@ -1637,17 +1716,19 @@ function checkPassword(){
         hideLoading();
 
 
-        document.getElementById("result")
-        .innerHTML =
+        document.getElementById(
+            "result"
+        ).innerHTML =
 
-        `تم تحويل <b>${amount} جنيه</b> لرقم<br>
+        `محاكاة تحويل <b>${amount} جنيه</b> لرقم<br>
         <b>${phone}</b><br>
         مصاريف الخدمة <b>1 جنيه</b><br>
         اطلب <b>*9#</b> واشحن`;
 
 
-        document.getElementById("menu2")
-        .style.display = "flex";
+        document.getElementById(
+            "menu2"
+        ).style.display = "flex";
 
 
         showNotification(
@@ -1683,9 +1764,11 @@ function showNotification(
     }
 
 
-    document.getElementById("notifText")
-    .textContent =
-        `تم تحويل ${amount} جنيه إلى ${masked}`;
+    document.getElementById(
+        "notifText"
+    ).textContent =
+
+        `محاكاة تحويل ${amount} جنيه إلى ${masked}`;
 
 
     const notification =
@@ -1715,6 +1798,7 @@ function showNotification(
 
         },350);
 
+
     },5000);
 
 }
@@ -1724,31 +1808,37 @@ function showNotification(
 
 function resetAll(){
 
-    document.getElementById("menu1")
-    .style.display = "none";
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
 
 
-    document.getElementById("menu2")
-    .style.display = "none";
+    document.getElementById(
+        "menu2"
+    ).style.display = "none";
 
 
-    document.getElementById("ussdLoading")
-    .style.display = "none";
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "none";
 
 
     number = "";
 
 
-    document.getElementById("display")
-    .textContent = "";
+    document.getElementById(
+        "display"
+    ).textContent = "";
 
 
-    document.getElementById("password")
-    .value = "";
+    document.getElementById(
+        "password"
+    ).value = "";
 
 
-    document.getElementById("error")
-    .style.display = "none";
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 
 
     updateContacts();
@@ -1759,46 +1849,48 @@ function resetAll(){
 /* ================= KEYBOARD ================= */
 
 document.addEventListener(
-"keydown",
-function(e){
-
-    if(
-        (e.key >= "0" &&
-        e.key <= "9") ||
-        e.key === "*" ||
-        e.key === "#"
-    ){
-
-        add(e.key);
-
-    }
-
-
-    if(e.key === "Backspace"){
-
-        backspace();
-
-    }
-
-
-    if(e.key === "Enter"){
+    "keydown",
+    function(e){
 
         if(
-            document.getElementById("menu1")
-            .style.display === "flex"
+            (e.key >= "0" &&
+            e.key <= "9") ||
+            e.key === "*" ||
+            e.key === "#"
         ){
 
-            checkPassword();
+            add(e.key);
 
-        }else{
+        }
 
-            startCall();
+
+        if(e.key === "Backspace"){
+
+            backspace();
+
+        }
+
+
+        if(e.key === "Enter"){
+
+            if(
+                document.getElementById(
+                    "menu1"
+                ).style.display === "flex"
+            ){
+
+                checkPassword();
+
+            }else{
+
+                startCall();
+
+            }
 
         }
 
     }
-
-});
+);
 
 
 /* ================= CLOCK ================= */
@@ -1819,14 +1911,16 @@ function updateClock(){
         ).padStart(2,"0");
 
 
-    document.getElementById("clock")
-    .textContent =
+    document.getElementById(
+        "clock"
+    ).textContent =
         hours + ":" + minutes;
 
 }
 
 
 updateClock();
+
 
 setInterval(
     updateClock,
