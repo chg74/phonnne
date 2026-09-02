@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
+
+<title>Phone </title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    color:#fff;
+}
+
+.app{
+    width:100%;
+    height:100dvh;
+    background:#000;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ================= STATUS ================= */
+
+.status{
+    height:56px;
+    padding:7px 24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#080808;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:bold;
+}
+
+.status-right{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-area{
+    height:350px;
+
+    background:#000;
+
+    padding:
+        13px 46px 0;
+}
+
+.contact-row{
+    height:76px;
+
+    display:flex;
+    align-items:center;
+
+    gap:25px;
+
+    color:#fff;
+}
+
+.contact-icon{
+    width:44px;
+    min-width:44px;
+    height:44px;
+
+    position:relative;
+}
+
+/* person */
+
+.person-icon:before{
+    content:"";
+
+    position:absolute;
+
+    width:17px;
+    height:17px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    left:13px;
+    top:0;
+}
+
+.person-icon:after{
+    content:"";
+
+    position:absolute;
+
+    width:40px;
+    height:22px;
+
+    border-radius:
+        22px 22px 8px 8px;
+
+    background:#fff;
+
+    left:2px;
+    bottom:0;
+}
+
+/* video */
+
+.video-icon{
+    border:4px solid #fff;
+
+    border-radius:5px;
+
+    width:39px;
+    height:28px;
+
+    margin-left:1px;
+    margin-top:6px;
+}
+
+.video-icon:after{
+    content:"";
+
+    position:absolute;
+
+    right:-12px;
+    top:4px;
+
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+    border-left:11px solid #fff;
+}
+
+/* message */
+
+.message-icon{
+    width:44px;
+    height:30px;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    margin-top:4px;
+}
+
+.message-icon:after{
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:8px;
+
+    border-top:13px solid #fff;
+    border-right:9px solid transparent;
+}
+
+.contact-text{
+    font-size:19px;
+    font-weight:600;
+
+    letter-spacing:-.3px;
+}
+
+/* ================= DIALER ================= */
+
+.dialer{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:
+        calc(100dvh - 406px);
+
+    min-height:420px;
+
+    background:#5a484b;
+
+    border-radius:
+        27px 27px 0 0;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+/* ================= NUMBER BAR ================= */
+
+.number-bar{
+    height:72px;
+
+    flex-shrink:0;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:
+        0 65px;
+
+    color:#fff;
+}
+
+.display{
+    width:100%;
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:500;
+
+    direction:ltr;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+/* more */
+
+.more{
+    position:absolute;
+
+    left:27px;
+    top:25px;
+
+    width:22px;
+    height:27px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+}
+
+.more i{
+    width:4px;
+    height:4px;
+
+    background:#fff;
+
+    border-radius:50%;
+}
+
+/* delete */
+
+.delete-top{
+    position:absolute;
+
+    right:23px;
+    top:19px;
+
+    width:47px;
+    height:36px;
+
+    border:0;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.delete-body{
+    width:34px;
+    height:25px;
+
+    border:
+        3px solid #fff;
+
+    border-radius:5px;
+
+    position:relative;
+}
+
+.delete-body:before{
+    content:"";
+
+    position:absolute;
+
+    left:-9px;
+    top:3px;
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    border-right:
+        9px solid #fff;
+}
+
+.delete-body:after{
+    content:"×";
+
+    position:absolute;
+
+    left:6px;
+    top:-5px;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+
+/* ================= KEYPAD ================= */
+
+.keypad{
+    flex:1;
+
+    padding:
+        0 28px 6px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    grid-template-rows:
+        repeat(4,1fr);
+
+    gap:
+        13px 25px;
+}
+
+.key{
+    border:0;
+
+    min-height:55px;
+
+    border-radius:38px;
+
+    background:#251e20;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    font-size:27px;
+
+    font-weight:400;
+
+    user-select:none;
+
+    cursor:pointer;
+
+    transition:
+        transform .08s,
+        background .08s;
+}
+
+.key small{
+    margin-top:2px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    line-height:1;
+}
+
+.key:active{
+    transform:scale(.94);
+
+    background:#403638;
+}
+
+/* ================= CALL ================= */
+
+.call-area{
+    height:72px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.call{
+    width:300px;
+
+    max-width:72%;
+
+    height:56px;
+
+    border:0;
+
+    border-radius:35px;
+
+    background:#5fe19b;
+
+    color:#17382a;
+
+    font-size:25px;
+
+    font-weight:500;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    cursor:pointer;
+}
+
+.phone-icon{
+    position:relative;
+
+    width:22px;
+    height:22px;
+}
+
+.phone-icon:before{
+    content:"☎";
+
+    position:absolute;
+
+    left:0;
+    top:-5px;
+
+    font-size:26px;
+
+    font-weight:bold;
+}
+
+/* ================= BOTTOM ================= */
+
+.bottom{
+    height:78px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#d0c5c7;
+
+    background:#4d3e41;
+
+    padding-bottom:3px;
+}
+
+.nav-item{
+    height:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:4px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.nav-icon{
+    width:42px;
+    height:35px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+}
+
+.nav-item.active{
+    color:#fff;
+}
+
+.nav-item.active .nav-icon{
+    width:65px;
+    height:45px;
+
+    border-radius:27px;
+
+    background:#b6818e;
+
+    font-size:25px;
+}
+
+/* ================= LOADING ================= */
+
+.ussd-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:500;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+        rgba(0,0,0,.55);
+
+    padding:20px;
+}
+
+.ussd-box{
+    width:88%;
+    max-width:370px;
+
+    min-height:175px;
+
+    background:#a59e7e;
+
+    border-radius:27px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.6);
+
+    text-align:center;
+}
+
+.ussd-title{
+    font-size:21px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+    direction:rtl;
+}
+
+.loader{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    border:
+        5px solid rgba(0,0,0,.12);
+
+    border-top-color:#168fe0;
+
+    border-right-color:#168fe0;
+
+    animation:
+        spin .8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ================= POPUP ================= */
+
+.overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:700;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+        rgba(0,0,0,.55);
+
+    padding:20px;
+}
+
+.popup{
+    width:91%;
+    max-width:380px;
+
+    background:#403838;
+
+    border-radius:24px;
+
+    padding:19px;
+
+    color:#fff;
+
+    direction:rtl;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.7);
+}
+
+.title{
+    direction:ltr;
+
+    text-align:left;
+
+    font-size:19px;
+
+    font-weight:bold;
+
+    margin-bottom:16px;
+}
+
+.title span{
+    display:inline-flex;
+
+    width:23px;
+    height:23px;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#777;
+
+    border-radius:6px;
+
+    font-size:12px;
+
+    margin-right:6px;
+}
+
+.message{
+    text-align:right;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+.input{
+    width:100%;
+
+    height:50px;
+
+    border:
+        2px solid #72c6e7;
+
+    border-radius:17px;
+
+    background:transparent;
+
+    color:#fff;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:20px;
+
+    margin:11px 0;
+}
+
+.buttons{
+    display:flex;
+
+    gap:11px;
+
+    direction:ltr;
+}
+
+.buttons button{
+    flex:1;
+
+    height:50px;
+
+    border:0;
+
+    border-radius:27px;
+
+    font-size:16px;
+}
+
+.cancel{
+    background:#655d5d;
+    color:#fff;
+}
+
+.send{
+    background:#7ed9e8;
+
+    color:#16363c;
+
+    font-weight:bold;
+}
+
+.error{
+    display:none;
+
+    color:#ff7070;
+
+    text-align:center;
+
+    font-size:13px;
+
+    margin-top:5px;
+}
+
+/* ================= NOTIFICATION ================= */
+
+.notification{
+    position:fixed;
+
+    top:12px;
+
+    left:10px;
+    right:10px;
+
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+
+    padding:12px 14px;
+
+    border-radius:17px;
+
+    background:#292929;
+
+    color:#fff;
+
+    box-shadow:
+        0 7px 30px rgba(0,0,0,.65);
+
+    direction:rtl;
+}
+
+.icon{
+    width:41px;
+    height:41px;
+
+    min-width:41px;
+
+    border-radius:50%;
+
+    background:#555;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:19px;
+
+    margin-left:10px;
+}
+
+.notif-content{
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+}
+
+.notif-content strong{
+    font-size:13px;
+}
+
+.notif-content span{
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+.notif-time{
+    color:#aaa;
+
+    font-size:10px;
+
+    margin-right:5px;
+}
+
+@keyframes notificationIn{
+    from{
+        transform:translateY(-130%);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes notificationOut{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-130%);
+        opacity:0;
+    }
+}
+
+/* ================= SMALL SCREEN ================= */
+
+@media(max-height:650px){
+
+    .status{
+        height:44px;
+    }
+
+    .contact-area{
+        height:265px;
+        padding-top:3px;
+    }
+
+    .contact-row{
+        height:57px;
+    }
+
+    .contact-text{
+        font-size:16px;
+    }
+
+    .dialer{
+        height:
+            calc(100dvh - 309px);
+    }
+
+    .number-bar{
+        height:59px;
+    }
+
+    .display{
+        font-size:25px;
+    }
+
+    .keypad{
+        gap:8px 18px;
+
+        padding-left:24px;
+        padding-right:24px;
+    }
+
+    .key{
+        font-size:25px;
+    }
+
+    .call-area{
+        height:63px;
+    }
+
+    .call{
+        height:52px;
+        font-size:23px;
+    }
+
+    .bottom{
+        height:63px;
+    }
+
+    .nav-item{
+        height:58px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- STATUS -->
+
+<div class="status">
+
+    <span id="clock">15:30</span>
+
+    <div class="status-right">
+        <span> </span>
+        <span> </span>
+        <span> </span>
+    </div>
+
+</div>
+
+
+<!-- CONTACT AREA -->
+
+<div class="contact-area">
+
+    <div class="contact-row">
+
+        <div class="contact-icon person-icon"></div>
+
+        <div class="contact-text">
+            Create new contact
+        </div>
+
+    </div>
+
+
+    <div class="contact-row">
+
+        <div class="contact-icon person-icon"></div>
+
+        <div class="contact-text">
+            Add to a contact
+        </div>
+
+    </div>
+
+
+    <div class="contact-row">
+
+        <div class="contact-icon video-icon"></div>
+
+        <div class="contact-text">
+            Video call
+        </div>
+
+    </div>
+
+
+    <div class="contact-row">
+
+        <div class="contact-icon message-icon"></div>
+
+        <div class="contact-text">
+            Send a message
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DIALER -->
+
+<div class="dialer">
+
+    <div class="number-bar">
+
+        <div class="more">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+
+        <div
+            class="display"
+            id="display">
+        </div>
+
+        <button
+            class="delete-top"
+            onclick="backspace()">
+
+            <span class="delete-body"></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- KEYPAD -->
+
+    <div class="keypad">
+
+        <button class="key"
+        onclick="add('1')">
+            1
+            <small>Q</small>
+        </button>
+
+        <button class="key"
+        onclick="add('2')">
+            2
+            <small>ABC</small>
+        </button>
+
+        <button class="key"
+        onclick="add('3')">
+            3
+            <small>DEF</small>
+        </button>
+
+        <button class="key"
+        onclick="add('4')">
+            4
+            <small>GHI</small>
+        </button>
+
+        <button class="key"
+        onclick="add('5')">
+            5
+            <small>JKL</small>
+        </button>
+
+        <button class="key"
+        onclick="add('6')">
+            6
+            <small>MNO</small>
+        </button>
+
+        <button class="key"
+        onclick="add('7')">
+            7
+            <small>PQRS</small>
+        </button>
+
+        <button class="key"
+        onclick="add('8')">
+            8
+            <small>TUV</small>
+        </button>
+
+        <button class="key"
+        onclick="add('9')">
+            9
+            <small>WXYZ</small>
+        </button>
+
+        <button class="key"
+        onclick="add('*')">
+            *
+        </button>
+
+        <button class="key"
+        onclick="add('0')">
+            0
+            <small>+</small>
+        </button>
+
+        <button class="key"
+        onclick="add('#')">
+            #
+        </button>
+
+    </div>
+
+
+    <!-- CALL -->
+
+    <div class="call-area">
+
+        <button
+            class="call"
+            onclick="startCall()">
+
+            <span class="phone-icon"></span>
+
+            <span>Call</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="bottom">
+
+        <div class="nav-item">
+
+            <div class="nav-icon">
+                
+            </div>
+
+            <div>
+                Recents
+            </div>
+
+        </div>
+
+
+        <div class="nav-item">
+
+            <div class="nav-icon">
+                
+            </div>
+
+            <div>
+                Contacts
+            </div>
+
+        </div>
+
+
+        <div class="nav-item active">
+
+            <div class="nav-icon">
+                ⠿
+            </div>
+
+            <div>
+                Keypad
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= USSD LOADING ================= -->
+
+<div
+class="ussd-overlay"
+id="ussdLoading">
+
+    <div class="ussd-box">
+
+        <div
+        class="ussd-title"
+        id="loadingText">
+
+            تشغيل USSD...
+
+        </div>
+
+        <div class="loader"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PASSWORD ================= -->
+
+<div
+class="overlay"
+id="menu1">
+
+    <div class="popup">
+
+        <div class="title">
+
+            <span>2</span>
+
+            Carrier info
+
+        </div>
+
+        <div class="message">
+
+            ادخل الرقم السري
+
+            <br>
+
+            1: الإعادة
+
+            <br>
+
+            2: معرفة الرسوم
+
+            <br>
+
+            00: الرجوع
+
+        </div>
+
+        <div
+        class="error"
+        id="error">
+
+            الرقم السري غير صحيح
+
+        </div>
+
+        <input
+        id="password"
+        class="input"
+        type="password"
+        inputmode="numeric">
+
+        <div class="buttons">
+
+            <button
+            class="cancel"
+            onclick="closeMenu()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="send"
+            onclick="checkPassword()">
+
+                Send
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= RESULT ================= -->
+
+<div
+class="overlay"
+id="menu2">
+
+    <div class="popup">
+
+        <div class="title">
+
+            <span>2</span>
+
+            Carrier info
+
+        </div>
+
+        <div
+        class="message"
+        id="result">
+        </div>
+
+        <div class="message">
+
+            0: المزيد
+
+        </div>
+
+        <input
+        class="input"
+        type="text">
+
+        <div class="buttons">
+
+            <button
+            class="cancel"
+            onclick="resetAll()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="send"
+            onclick="resetAll()">
+
+                Send
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NOTIFICATION ================= -->
+
+<div
+class="notification"
+id="notification">
+
+    <div class="icon">
+        ✓
+    </div>
+
+    <div class="notif-content">
+
+        <strong>
+            Vodafone Crash
+        </strong>
+
+        <span id="notifText"></span>
+
+    </div>
+
+    <div class="notif-time">
+        الآن
+    </div>
+
+</div>
+
+
+<script>
+
+let number = "";
+
+
+/* ================= ADD ================= */
+
+function add(value){
+
+    number += value;
+
+    document.getElementById("display")
+    .textContent = number;
+
+}
+
+
+/* ================= BACKSPACE ================= */
+
+function backspace(){
+
+    number =
+        number.slice(0,-1);
+
+    document.getElementById("display")
+    .textContent = number;
+
+}
+
+
+/* ================= LOADING ================= */
+
+function showLoading(text){
+
+    document.getElementById("loadingText")
+    .textContent = text;
+
+    document.getElementById("ussdLoading")
+    .style.display = "flex";
+
+}
+
+
+function hideLoading(){
+
+    document.getElementById("ussdLoading")
+    .style.display = "none";
+
+}
+
+
+/* ================= CALL ================= */
+
+function startCall(){
+
+    const pattern =
+        /^\*9\*7\*\d+\*\d+#$/;
+
+
+    if(!pattern.test(number)){
+
+        alert(
+            "اكتب الكود بالشكل:\n\n" +
+            "*9*7*رقم الهاتف*المبلغ#"
+        );
+
+        return;
+
+    }
+
+
+    /* المرحلة الأولى */
+
+    showLoading(
+        "تشغيل USSD..."
+    );
+
+
+    setTimeout(function(){
+
+        hideLoading();
+
+
+        document.getElementById("menu1")
+        .style.display = "flex";
+
+
+        setTimeout(function(){
+
+            document.getElementById("password")
+            .focus();
+
+        },150);
+
+
+    },2000);
+
+}
+
+
+/* ================= CLOSE ================= */
+
+function closeMenu(){
+
+    document.getElementById("menu1")
+    .style.display = "none";
+
+    document.getElementById("password")
+    .value = "";
+
+    document.getElementById("error")
+    .style.display = "none";
+
+}
+
+
+/* ================= PASSWORD ================= */
+
+function checkPassword(){
+
+    const password =
+        document.getElementById("password")
+        .value.trim();
+
+
+    if(password !== "500500"){
+
+        document.getElementById("error")
+        .style.display = "block";
+
+        return;
+
+    }
+
+
+    document.getElementById("error")
+    .style.display = "none";
+
+
+    let data =
+        number.replace("*9*7*","");
+
+
+    data =
+        data.replace(/#$/,"");
+
+
+    let parts =
+        data.split("*");
+
+
+    let phone =
+        parts[0] || "";
+
+
+    let amount =
+        parts[1] || "0";
+
+
+    /*
+       المرحلة الثانية:
+       بعد كلمة السر
+    */
+
+    document.getElementById("menu1")
+    .style.display = "none";
+
+
+    showLoading(
+        "تشغيل USSD..."
+    );
+
+
+    /*
+       المرحلة الثالثة:
+       رسالة نجاح مؤقتة
+    */
+
+    setTimeout(function(){
+
+        document.getElementById("loadingText")
+        .textContent =
+            "تشغيل USSD...";
+
+    },1700);
+
+
+    /*
+       بعد انتهاء التحميل تظهر النتيجة
+    */
+
+    setTimeout(function(){
+
+        hideLoading();
+
+
+        document.getElementById("result")
+        .innerHTML =
+
+        `تم تحويل <b>${amount} جنيه</b> لرقم<br>
+        <b>${phone}</b><br>
+        مصاريف الخدمة <b>1 جنيه</b><br>
+        اطلب <b>*9#</b> واشحن`;
+
+
+        document.getElementById("menu2")
+        .style.display = "flex";
+
+
+        showNotification(
+            phone,
+            amount
+        );
+
+
+    },3200);
+
+}
+
+
+/* ================= NOTIFICATION ================= */
+
+function showNotification(
+    phone,
+    amount
+){
+
+    let masked = phone;
+
+
+    if(phone.length > 6){
+
+        masked =
+            phone.substring(0,4) +
+            "••••" +
+            phone.substring(
+                phone.length - 2
+            );
+
+    }
+
+
+    document.getElementById("notifText")
+    .textContent =
+        `تم تحويل ${amount} جنيه إلى ${masked}`;
+
+
+    const notification =
+        document.getElementById(
+            "notification"
+        );
+
+
+    notification.style.display =
+        "flex";
+
+
+    notification.style.animation =
+        "notificationIn .35s ease";
+
+
+    setTimeout(function(){
+
+        notification.style.animation =
+            "notificationOut .35s ease";
+
+
+        setTimeout(function(){
+
+            notification.style.display =
+                "none";
+
+        },350);
+
+    },5000);
+
+}
+
+
+/* ================= RESET ================= */
+
+function resetAll(){
+
+    document.getElementById("menu1")
+    .style.display = "none";
+
+
+    document.getElementById("menu2")
+    .style.display = "none";
+
+
+    document.getElementById("ussdLoading")
+    .style.display = "none";
+
+
+    number = "";
+
+
+    document.getElementById("display")
+    .textContent = "";
+
+
+    document.getElementById("password")
+    .value = "";
+
+
+    document.getElementById("error")
+    .style.display = "none";
+
+}
+
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+    if(
+        (e.key >= "0" &&
+        e.key <= "9") ||
+        e.key === "*" ||
+        e.key === "#"
+    ){
+
+        add(e.key);
+
+    }
+
+
+    if(e.key === "Backspace"){
+
+        backspace();
+
+    }
+
+
+    if(e.key === "Enter"){
+
+        if(
+            document.getElementById("menu1")
+            .style.display === "flex"
+        ){
+
+            checkPassword();
+
+        }else{
+
+            startCall();
+
+        }
+
+    }
+
+});
+
+
+/* ================= CLOCK ================= */
+
+function updateClock(){
+
+    const d =
+        new Date();
+
+
+    let hours =
+        d.getHours();
+
+
+    let minutes =
+        String(
+            d.getMinutes()
+        ).padStart(2,"0");
+
+
+    document.getElementById("clock")
+    .textContent =
+        hours + ":" + minutes;
+
+}
+
+
+updateClock();
+
+setInterval(
+    updateClock,
+    60000
+);
+
+</script>
+
+</body>
+</html>
