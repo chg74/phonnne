@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no">
-
-<title>Phone</title>
+<title>Phone UI</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     -webkit-tap-highlight-color:transparent;
@@ -39,503 +33,312 @@ body{
     overflow:hidden;
 }
 
-/* ================= STATUS ================= */
-
+/* STATUS */
 .status{
-    height:54px;
-    padding:6px 25px;
-
+    height:50px;
+    padding:5px 24px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     background:#000;
     color:#fff;
-
-    font-size:15px;
+    font-size:14px;
     font-weight:bold;
 }
 
-.status-right{
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-
-/* ================= CONTACT AREA ================= */
-
+/* CONTACT AREA */
 .contact-area{
     position:absolute;
-
-    top:54px;
+    top:50px;
     left:0;
     right:0;
-
-    height:calc(43dvh - 54px);
-
+    height:calc(43dvh - 50px);
     background:#000;
-
-    padding:8px 42px 0;
-
+    padding:6px 38px 0;
     overflow:hidden;
 }
 
 .contact-row{
-    height:68px;
-
+    height:61px;
     display:flex;
-
     align-items:center;
-
-    gap:22px;
-
+    gap:19px;
     color:#fff;
 }
 
 .contact-icon{
-    width:45px;
-    min-width:45px;
-    height:45px;
-
+    width:41px;
+    min-width:41px;
+    height:41px;
     position:relative;
 }
 
-
 /* PERSON */
-
 .person-icon:before{
     content:"";
-
     position:absolute;
-
-    width:17px;
-    height:17px;
-
+    width:16px;
+    height:16px;
     border-radius:50%;
-
     background:#fff;
-
-    left:14px;
+    left:12px;
     top:0;
 }
 
 .person-icon:after{
     content:"";
-
     position:absolute;
-
-    width:40px;
-    height:22px;
-
-    border-radius:
-        22px 22px 8px 8px;
-
+    width:37px;
+    height:20px;
+    border-radius:20px 20px 7px 7px;
     background:#fff;
-
     left:2px;
     bottom:0;
 }
 
-
 /* VIDEO */
-
 .video-icon{
-    border:4px solid #fff;
-
+    border:3px solid #fff;
     border-radius:5px;
-
-    width:39px;
-    height:28px;
-
+    width:36px;
+    height:26px;
     margin-left:1px;
 }
 
 .video-icon:after{
     content:"";
-
     position:absolute;
-
-    right:-12px;
+    right:-11px;
     top:4px;
-
-    border-top:8px solid transparent;
-    border-bottom:8px solid transparent;
-    border-left:11px solid #fff;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    border-left:10px solid #fff;
 }
 
-
 /* MESSAGE */
-
 .message-icon{
-    width:45px;
-    height:30px;
-
-    border-radius:18px;
-
+    width:41px;
+    height:28px;
+    border-radius:17px;
     background:#fff;
 }
 
 .message-icon:after{
     content:"";
-
     position:absolute;
-
     bottom:0;
-    left:8px;
-
-    border-top:13px solid #fff;
-    border-right:9px solid transparent;
+    left:7px;
+    border-top:12px solid #fff;
+    border-right:8px solid transparent;
 }
-
-
-/* TEXT */
 
 .contact-text{
-    font-size:19px;
+    font-size:17px;
     font-weight:600;
-
-    letter-spacing:-.3px;
 }
 
-
-/* ================= DIALER ================= */
-
+/* DIALER */
 .dialer{
     position:absolute;
-
     left:0;
     right:0;
     bottom:0;
-
     height:58dvh;
-
-    min-height:0;
-
     background:#5a484b;
-
-    border-radius:
-        28px 28px 0 0;
-
+    border-radius:25px 25px 0 0;
     display:flex;
-
     flex-direction:column;
-
     overflow:hidden;
 }
 
-
-/* ================= NUMBER BAR ================= */
-
+/* NUMBER BAR */
 .number-bar{
-    height:72px;
-
+    height:65px;
     flex-shrink:0;
-
     position:relative;
-
     display:flex;
-
     justify-content:center;
     align-items:center;
-
-    padding:0 65px;
-
-    color:#fff;
+    padding:0 60px;
 }
 
+/* DISPLAY */
 .display{
     width:100%;
-
     text-align:center;
-
-    font-size:27px;
-
+    font-size:24px;
     font-weight:500;
-
     direction:ltr;
-
     white-space:nowrap;
-
     overflow:hidden;
-
     text-overflow:ellipsis;
+    outline:none;
+    border:none;
+    background:transparent;
+    color:#fff;
+    caret-color:#fff;
+    padding:0;
+    height:42px;
 }
 
-
-/* ================= MORE ================= */
-
+/* MORE */
 .more{
     position:absolute;
-
-    left:28px;
-    top:24px;
-
-    width:22px;
-    height:28px;
-
+    left:26px;
+    top:21px;
+    width:20px;
+    height:25px;
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
-
     gap:4px;
 }
 
 .more i{
     width:4px;
     height:4px;
-
     background:#fff;
-
     border-radius:50%;
 }
 
-
-/* ================= DELETE ================= */
-
+/* DELETE */
 .delete-top{
     position:absolute;
-
-    right:20px;
-    top:17px;
-
-    width:47px;
+    right:18px;
+    top:15px;
+    width:46px;
     height:36px;
-
     border:0;
-
     background:transparent;
-
-    display:flex;
-
+    display:none;
     align-items:center;
     justify-content:center;
+    padding:0;
 }
 
-.delete-body{
-    width:34px;
-    height:25px;
-
-    border:3px solid #fff;
-
-    border-radius:5px;
-
-    position:relative;
+.delete-svg{
+    width:31px;
+    height:24px;
+    display:block;
+    transition:transform .08s ease;
 }
 
-.delete-body:before{
-    content:"";
-
-    position:absolute;
-
-    left:-9px;
-    top:3px;
-
-    border-top:7px solid transparent;
-    border-bottom:7px solid transparent;
-    border-right:9px solid #fff;
+.delete-top:active .delete-svg{
+    transform:scale(.86);
 }
 
-.delete-body:after{
-    content:"×";
-
-    position:absolute;
-
-    left:6px;
-    top:-5px;
-
-    color:#fff;
-
-    font-size:20px;
-
-    font-weight:bold;
-}
-
-
-/* ================= KEYPAD ================= */
-
+/* KEYPAD */
 .keypad{
     flex:1;
-
-    padding:
-        0 27px 7px;
-
+    padding:0 25px 6px;
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    grid-template-rows:
-        repeat(4,1fr);
-
-    gap:
-        9px 24px;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(4,1fr);
+    gap:8px 21px;
 }
 
 .key{
     border:0;
-
     min-height:0;
-
-    border-radius:42px;
-
+    border-radius:39px;
     background:#251e20;
-
     color:#fff;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     flex-direction:column;
-
-    font-size:28px;
-
+    font-size:25px;
     font-weight:400;
-
     user-select:none;
-
     cursor:pointer;
-
-    transition:
-        transform .08s,
-        background .08s;
+    transition:transform .08s,background .08s;
 }
 
 .key small{
     margin-top:2px;
-
-    font-size:11px;
-
+    font-size:10px;
     font-weight:bold;
-
     line-height:1;
 }
 
 .key:active{
     transform:scale(.94);
-
     background:#403638;
 }
 
-
-/* ================= CALL ================= */
-
+/* CALL */
 .call-area{
-    height:76px;
-
+    height:73px;
     flex-shrink:0;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
 }
 
 .call{
     width:300px;
-
-    max-width:72%;
-
+    max-width:76%;
     height:57px;
-
     border:0;
-
     border-radius:35px;
-
     background:#5fe19b;
-
     color:#17382a;
-
     font-size:25px;
-
-    font-weight:500;
-
+    font-weight:600;
     display:flex;
-
     align-items:center;
     justify-content:center;
-
-    gap:9px;
-
+    gap:10px;
     cursor:pointer;
+    transition:transform .08s ease;
 }
 
-.phone-icon{
-    position:relative;
-
-    width:22px;
-    height:22px;
+.real-phone-icon{
+    width:29px;
+    height:29px;
+    fill:#0b7a43;
+    display:block;
 }
 
-.phone-icon:before{
-    content:"☎";
-
-    position:absolute;
-
-    left:0;
-    top:-5px;
-
-    font-size:26px;
-
-    font-weight:bold;
+.call:active{
+    transform:scale(.94);
 }
 
-
-/* ================= BOTTOM ================= */
-
+/* BOTTOM */
 .bottom{
-    height:72px;
-
+    height:67px;
     flex-shrink:0;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     align-items:center;
-
     text-align:center;
-
     color:#d0c5c7;
-
     background:#4d3e41;
-
-    padding-bottom:2px;
+    padding:0;
 }
 
 .nav-item{
-    height:65px;
-
+    height:67px;
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
-
-    gap:4px;
-
-    font-size:13px;
-
+    gap:3px;
+    font-size:12px;
     font-weight:bold;
+    color:#d0c5c7;
+    line-height:1;
 }
 
 .nav-icon{
-    width:42px;
-    height:32px;
-
+    width:40px;
+    height:29px;
     display:flex;
-
     align-items:center;
     justify-content:center;
-
-    font-size:24px;
+    font-size:22px;
+    flex-shrink:0;
 }
 
 .nav-item.active{
@@ -543,211 +346,153 @@ body{
 }
 
 .nav-item.active .nav-icon{
-    width:65px;
-    height:43px;
-
-    border-radius:27px;
-
+    width:60px;
+    height:40px;
+    border-radius:25px;
     background:#b6818e;
-
-    font-size:25px;
+    font-size:23px;
 }
 
-
-/* ================= LOADING ================= */
-
+/* USSD LOADING */
 .ussd-overlay{
     position:fixed;
-
     inset:0;
-
     z-index:500;
-
     display:none;
-
     justify-content:center;
     align-items:center;
-
-    background:rgba(0,0,0,.55);
-
+    background:rgba(0,0,0,.42);
     padding:20px;
 }
 
 .ussd-box{
-    width:88%;
-    max-width:370px;
-
-    min-height:175px;
-
-    background:#a59e7e;
-
-    border-radius:27px;
-
+    width:240px;
+    min-height:128px;
+    background:#303030;
+    border-radius:23px;
+    padding:22px 20px;
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
-
     color:#fff;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.6);
-
-    text-align:center;
+    box-shadow:0 12px 40px rgba(0,0,0,.6);
 }
 
-.ussd-title{
-    font-size:21px;
-
-    font-weight:bold;
-
-    margin-bottom:25px;
-
-    direction:rtl;
+.android-spinner{
+    width:37px;
+    height:37px;
+    display:block;
+    animation:androidRotate 1s linear infinite;
 }
 
-.loader{
-    width:44px;
-    height:44px;
-
-    border-radius:50%;
-
-    border:
-        5px solid rgba(0,0,0,.12);
-
-    border-top-color:#168fe0;
-
-    border-right-color:#168fe0;
-
-    animation:
-        spin .8s linear infinite;
+.android-spinner circle{
+    transform-origin:50% 50%;
+    animation:androidDash 1.4s ease-in-out infinite;
 }
 
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
+@keyframes androidRotate{
+    100%{transform:rotate(360deg);}
+}
+
+@keyframes androidDash{
+    0%{
+        stroke-dasharray:1,150;
+        stroke-dashoffset:0;
+    }
+    50%{
+        stroke-dasharray:90,150;
+        stroke-dashoffset:-35;
+    }
+    100%{
+        stroke-dasharray:90,150;
+        stroke-dashoffset:-125;
     }
 }
 
+.ussd-title{
+    margin-top:14px;
+    font-size:15px;
+    font-weight:400;
+    text-align:center;
+    direction:rtl;
+    color:#fff;
+}
 
-/* ================= POPUP ================= */
-
+/* POPUP */
 .overlay{
     position:fixed;
-
     inset:0;
-
     z-index:700;
-
     display:none;
-
     justify-content:center;
     align-items:center;
-
     background:rgba(0,0,0,.55);
-
     padding:20px;
 }
 
 .popup{
     width:91%;
-    max-width:380px;
-
+    max-width:360px;
     background:#403838;
-
-    border-radius:24px;
-
-    padding:19px;
-
+    border-radius:22px;
+    padding:18px;
     color:#fff;
-
     direction:rtl;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.7);
+    box-shadow:0 15px 45px rgba(0,0,0,.7);
 }
 
 .title{
     direction:ltr;
-
     text-align:left;
-
-    font-size:19px;
-
+    font-size:18px;
     font-weight:bold;
-
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
 .title span{
     display:inline-flex;
-
-    width:23px;
-    height:23px;
-
+    width:22px;
+    height:22px;
     align-items:center;
     justify-content:center;
-
     background:#777;
-
     border-radius:6px;
-
-    font-size:12px;
-
+    font-size:11px;
     margin-right:6px;
 }
 
 .message{
     text-align:right;
-
-    font-size:16px;
-
+    font-size:15px;
     line-height:1.8;
 }
 
 .input{
     width:100%;
-
-    height:50px;
-
-    border:
-        2px solid #72c6e7;
-
-    border-radius:17px;
-
+    height:48px;
+    border:2px solid #72c6e7;
+    border-radius:16px;
     background:transparent;
-
     color:#fff;
-
     outline:none;
-
     text-align:center;
-
-    font-size:20px;
-
-    margin:11px 0;
+    font-size:19px;
+    margin:10px 0;
 }
 
 .buttons{
     display:flex;
-
-    gap:11px;
-
+    gap:10px;
     direction:ltr;
 }
 
 .buttons button{
     flex:1;
-
-    height:50px;
-
+    height:48px;
     border:0;
-
-    border-radius:27px;
-
-    font-size:16px;
+    border-radius:26px;
+    font-size:15px;
 }
 
 .cancel{
@@ -757,110 +502,111 @@ body{
 
 .send{
     background:#7ed9e8;
-
     color:#16363c;
-
     font-weight:bold;
 }
 
 .error{
     display:none;
-
     color:#ff7070;
-
     text-align:center;
-
-    font-size:13px;
-
+    font-size:12px;
     margin-top:5px;
 }
 
-
-/* ================= NOTIFICATION ================= */
-
+/* NOTIFICATION */
 .notification{
     position:fixed;
-
     top:12px;
-
     left:10px;
     right:10px;
-
     z-index:9999;
-
     display:none;
-
-    align-items:center;
-
-    padding:12px 14px;
-
-    border-radius:17px;
-
+    align-items:flex-start;
+    padding:11px 13px;
+    border-radius:16px;
     background:#292929;
-
     color:#fff;
-
-    box-shadow:
-        0 7px 30px rgba(0,0,0,.65);
-
+    box-shadow:0 7px 30px rgba(0,0,0,.65);
     direction:rtl;
 }
 
-.icon{
-    width:41px;
-    height:41px;
-
-    min-width:41px;
-
-    border-radius:50%;
-
-    background:#555;
-
+.message-notif-icon{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    border-radius:12px;
+    background:#6d6d6d;
     display:flex;
-
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    margin-left:9px;
+    position:relative;
+}
 
-    font-size:19px;
+.message-notif-icon span{
+    width:24px;
+    height:17px;
+    background:#fff;
+    border-radius:6px;
+    position:relative;
+    display:block;
+}
 
-    margin-left:10px;
+.message-notif-icon span:after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:5px;
+    border-top:7px solid #fff;
+    border-left:7px solid transparent;
 }
 
 .notif-content{
     flex:1;
-
     display:flex;
-
     flex-direction:column;
-
     gap:3px;
+    min-width:0;
 }
 
-.notif-content strong{
-    font-size:13px;
+.notif-header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    direction:rtl;
 }
 
-.notif-content span{
-    font-size:12px;
-
-    line-height:1.5;
+.notif-header strong{
+    font-size:11px;
+    font-weight:400;
+    color:#ddd;
 }
 
 .notif-time{
     color:#aaa;
+    font-size:9px;
+    font-weight:400;
+}
 
-    font-size:10px;
+.notif-app{
+    font-size:12px;
+    font-weight:bold;
+    color:#fff;
+}
 
-    margin-right:5px;
+.notif-content > span{
+    font-size:11px;
+    line-height:1.5;
+    color:#fff;
 }
 
 @keyframes notificationIn{
-
     from{
         transform:translateY(-130%);
         opacity:0;
     }
-
     to{
         transform:translateY(0);
         opacity:1;
@@ -868,92 +614,91 @@ body{
 }
 
 @keyframes notificationOut{
-
     from{
         transform:translateY(0);
         opacity:1;
     }
-
     to{
         transform:translateY(-130%);
         opacity:0;
     }
 }
 
-
-/* ================= SMALL SCREEN ================= */
-
+/* SMALL SCREEN */
 @media(max-height:700px){
 
     .status{
-        height:45px;
+        height:43px;
     }
 
     .contact-area{
-        top:45px;
-
-        height:
-            calc(43dvh - 45px);
-
-        padding:
-            2px 35px 0;
+        top:43px;
+        height:calc(43dvh - 43px);
+        padding:2px 33px 0;
     }
 
     .contact-row{
-        height:56px;
-
-        gap:18px;
+        height:52px;
+        gap:16px;
     }
 
     .contact-text{
-        font-size:16px;
-    }
-
-    .dialer{
-        height:58dvh;
+        font-size:15px;
     }
 
     .number-bar{
-        height:58px;
+        height:54px;
     }
 
     .display{
-        font-size:24px;
-    }
-
-    .keypad{
-        gap:7px 18px;
-
-        padding-left:23px;
-        padding-right:23px;
-    }
-
-    .key{
-        font-size:24px;
-
-        border-radius:38px;
-    }
-
-    .call-area{
-        height:62px;
-    }
-
-    .call{
-        height:50px;
-
         font-size:22px;
     }
 
+    .keypad{
+        gap:6px 17px;
+        padding-left:21px;
+        padding-right:21px;
+    }
+
+    .key{
+        font-size:22px;
+        border-radius:35px;
+    }
+
+    .call-area{
+        height:63px;
+    }
+
+    .call{
+        width:290px;
+        height:51px;
+        font-size:22px;
+    }
+
+    .real-phone-icon{
+        width:26px;
+        height:26px;
+    }
+
     .bottom{
-        height:60px;
+        height:64px;
     }
 
     .nav-item{
-        height:56px;
+        height:64px;
+        font-size:11px;
     }
 
-}
+    .nav-icon{
+        height:28px;
+        font-size:20px;
+    }
 
+    .nav-item.active .nav-icon{
+        height:37px;
+        width:58px;
+    }
+}
 </style>
 </head>
 
@@ -961,283 +706,169 @@ body{
 
 <div class="app">
 
-
-<!-- ================= STATUS ================= -->
-
-<div class="status">
-
-    <span id="clock">15:30</span>
-
-    <div class="status-right">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="status">
+        <span id="clock">3:00</span>
     </div>
 
-</div>
+    <div class="contact-area">
 
+        <div class="contact-row" id="createContact">
+            <div class="contact-icon person-icon"></div>
+            <div class="contact-text">Create new contact</div>
+        </div>
 
-<!-- ================= CONTACT AREA ================= -->
+        <div class="contact-row" id="addContact">
+            <div class="contact-icon person-icon"></div>
+            <div class="contact-text">Add to a contact</div>
+        </div>
 
-<div class="contact-area" id="contactArea">
+        <div class="contact-row" id="videoCall">
+            <div class="contact-icon video-icon"></div>
+            <div class="contact-text">Video call</div>
+        </div>
 
-    <div class="contact-row" id="createContact">
-
-        <div class="contact-icon person-icon"></div>
-
-        <div class="contact-text">
-            Create new contact
+        <div class="contact-row" id="sendMessage">
+            <div class="contact-icon message-icon"></div>
+            <div class="contact-text">Send a message</div>
         </div>
 
     </div>
 
+    <div class="dialer">
 
-    <div class="contact-row" id="addContact">
+        <div class="number-bar">
 
-        <div class="contact-icon person-icon"></div>
-
-        <div class="contact-text">
-            Add to a contact
-        </div>
-
-    </div>
-
-
-    <div class="contact-row" id="videoCall">
-
-        <div class="contact-icon video-icon"></div>
-
-        <div class="contact-text">
-            Video call
-        </div>
-
-    </div>
-
-
-    <div class="contact-row" id="sendMessage">
-
-        <div class="contact-icon message-icon"></div>
-
-        <div class="contact-text">
-            Send a message
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= DIALER ================= -->
-
-<div class="dialer">
-
-    <div class="number-bar">
-
-        <div class="more">
-
-            <i></i>
-            <i></i>
-            <i></i>
-
-        </div>
-
-
-        <div
-            class="display"
-            id="display">
-        </div>
-
-
-        <button
-            class="delete-top"
-            onclick="backspace()">
-
-            <span class="delete-body"></span>
-
-        </button>
-
-    </div>
-
-
-    <!-- ================= KEYPAD ================= -->
-
-    <div class="keypad">
-
-        <button
-            class="key"
-            onclick="add('1')">
-
-            1
-            <small>Q</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('2')">
-
-            2
-            <small>ABC</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('3')">
-
-            3
-            <small>DEF</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('4')">
-
-            4
-            <small>GHI</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('5')">
-
-            5
-            <small>JKL</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('6')">
-
-            6
-            <small>MNO</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('7')">
-
-            7
-            <small>PQRS</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('8')">
-
-            8
-            <small>TUV</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('9')">
-
-            9
-            <small>WXYZ</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('*')">
-
-            *
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('0')">
-
-            0
-            <small>+</small>
-
-        </button>
-
-
-        <button
-            class="key"
-            onclick="add('#')">
-
-            #
-
-        </button>
-
-    </div>
-
-
-    <!-- ================= CALL ================= -->
-
-    <div class="call-area">
-
-        <button
-            class="call"
-            onclick="startCall()">
-
-            <span class="phone-icon"></span>
-
-            <span>Call</span>
-
-        </button>
-
-    </div>
-
-
-    <!-- ================= BOTTOM ================= -->
-
-    <div class="bottom">
-
-        <div class="nav-item">
-
-            <div class="nav-icon">
-                ◷
+            <div class="more">
+                <i></i>
+                <i></i>
+                <i></i>
             </div>
 
-            <div>
-                Recents
-            </div>
+            <input
+                type="text"
+                id="display"
+                class="display"
+                inputmode="text"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+            >
+
+            <button class="delete-top" id="deleteButton" onclick="backspace()">
+
+                <svg class="delete-svg" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+                        d="M17 3 H39 C43 3 46 6 46 10 V22 C46 26 43 29 39 29 H17 L3 16 Z"
+                        fill="#F5F5F5"/>
+
+                    <path
+                        d="M25 10 L35 21 M35 10 L25 21"
+                        stroke="#171717"
+                        stroke-width="2.8"
+                        stroke-linecap="round"/>
+
+                </svg>
+
+            </button>
 
         </div>
 
+        <div class="keypad">
 
-        <div class="nav-item">
+            <button class="key" onclick="add('1')">
+                1
+                <small>Q</small>
+            </button>
 
-            <div class="nav-icon">
-                ●●
-            </div>
+            <button class="key" onclick="add('2')">
+                2
+                <small>ABC</small>
+            </button>
 
-            <div>
-                Contacts
-            </div>
+            <button class="key" onclick="add('3')">
+                3
+                <small>DEF</small>
+            </button>
+
+            <button class="key" onclick="add('4')">
+                4
+                <small>GHI</small>
+            </button>
+
+            <button class="key" onclick="add('5')">
+                5
+                <small>JKL</small>
+            </button>
+
+            <button class="key" onclick="add('6')">
+                6
+                <small>MNO</small>
+            </button>
+
+            <button class="key" onclick="add('7')">
+                7
+                <small>PQRS</small>
+            </button>
+
+            <button class="key" onclick="add('8')">
+                8
+                <small>TUV</small>
+            </button>
+
+            <button class="key" onclick="add('9')">
+                9
+                <small>WXYZ</small>
+            </button>
+
+            <button class="key" onclick="add('*')">
+                *
+            </button>
+
+            <button class="key" onclick="add('0')">
+                0
+                <small>+</small>
+            </button>
+
+            <button class="key" onclick="add('#')">
+                #
+            </button>
 
         </div>
 
+        <div class="call-area">
 
-        <div class="nav-item active">
+            <button class="call" onclick="startCall()">
 
-            <div class="nav-icon">
-                ⠿
+                <svg class="real-phone-icon" viewBox="0 0 24 24">
+
+                    <path
+                        d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.61 21 3 12.39 3 2a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z">
+                    </path>
+
+                </svg>
+
+                <span>Call</span>
+
+            </button>
+
+        </div>
+
+        <div class="bottom">
+
+            <div class="nav-item">
+                <div class="nav-icon">◷</div>
+                <div>Recents</div>
             </div>
 
-            <div>
-                Keypad
+            <div class="nav-item">
+                <div class="nav-icon">●●</div>
+                <div>Contacts</div>
+            </div>
+
+            <div class="nav-item active">
+                <div class="nav-icon">⠿</div>
+                <div>Keypad</div>
             </div>
 
         </div>
@@ -1246,76 +877,57 @@ body{
 
 </div>
 
-</div>
-
-
-<!-- ================= USSD LOADING ================= -->
-
-<div
-    class="ussd-overlay"
-    id="ussdLoading">
+<!-- USSD LOADING -->
+<div class="ussd-overlay" id="ussdLoading">
 
     <div class="ussd-box">
 
-        <div
-            class="ussd-title"
-            id="loadingText">
+        <svg class="android-spinner" viewBox="0 0 50 50">
 
-            تشغيل USSD...
+            <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke="#8ab4f8"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="70 150">
+            </circle>
 
+        </svg>
+
+        <div class="ussd-title" id="loadingText">
+            جاري تنفيذ الطلب...
         </div>
-
-        <div class="loader"></div>
 
     </div>
 
 </div>
 
-
-<!-- ================= PASSWORD ================= -->
-
-<div
-    class="overlay"
-    id="menu1">
+<!-- MENU 1 -->
+<div class="overlay" id="menu1">
 
     <div class="popup">
 
         <div class="title">
-
             <span>2</span>
-
             Carrier info
-
         </div>
-
 
         <div class="message">
-
             ادخل الرقم السري
-
             <br>
-
             1: الإعادة
-
             <br>
-
             2: معرفة الرسوم
-
             <br>
-
             00: الرجوع
-
         </div>
 
-
-        <div
-            class="error"
-            id="error">
-
+        <div class="error" id="error">
             الرقم السري غير صحيح
-
         </div>
-
 
         <input
             id="password"
@@ -1323,24 +935,18 @@ body{
             type="password"
             inputmode="numeric">
 
-
         <div class="buttons">
 
             <button
                 class="cancel"
                 onclick="closeMenu()">
-
                 Cancel
-
             </button>
-
 
             <button
                 class="send"
                 onclick="checkPassword()">
-
                 Send
-
             </button>
 
         </div>
@@ -1349,59 +955,38 @@ body{
 
 </div>
 
-
-<!-- ================= RESULT ================= -->
-
-<div
-    class="overlay"
-    id="menu2">
+<!-- MENU 2 -->
+<div class="overlay" id="menu2">
 
     <div class="popup">
 
         <div class="title">
-
             <span>2</span>
-
             Carrier info
-
         </div>
 
-
-        <div
-            class="message"
-            id="result">
-        </div>
-
+        <div class="message" id="result"></div>
 
         <div class="message">
-
             0: المزيد
-
         </div>
-
 
         <input
             class="input"
             type="text">
-
 
         <div class="buttons">
 
             <button
                 class="cancel"
                 onclick="resetAll()">
-
                 Cancel
-
             </button>
-
 
             <button
                 class="send"
                 onclick="resetAll()">
-
                 Send
-
             </button>
 
         </div>
@@ -1410,21 +995,28 @@ body{
 
 </div>
 
-
-<!-- ================= NOTIFICATION ================= -->
-
+<!-- NOTIFICATION -->
 <div
     class="notification"
     id="notification">
 
-    <div class="icon">
-        ✓
+    <div class="icon message-notif-icon">
+        <span></span>
     </div>
-
 
     <div class="notif-content">
 
-        <strong>
+        <div class="notif-header">
+
+            <strong>رسالة</strong>
+
+            <span class="notif-time">
+                الآن
+            </span>
+
+        </div>
+
+        <strong class="notif-app">
             Vodafone Crash
         </strong>
 
@@ -1432,20 +1024,14 @@ body{
 
     </div>
 
-
-    <div class="notif-time">
-        الآن
-    </div>
-
 </div>
-
 
 <script>
 
 let number = "";
 
 
-/* ================= CONTACT OPTIONS ================= */
+/* CONTACTS */
 
 function updateContacts(){
 
@@ -1453,131 +1039,127 @@ function updateContacts(){
         number.replace(/\D/g,"").length;
 
     const create =
-        document.getElementById(
-            "createContact"
-        );
+        document.getElementById("createContact");
 
     const addContact =
-        document.getElementById(
-            "addContact"
-        );
+        document.getElementById("addContact");
 
     const video =
-        document.getElementById(
-            "videoCall"
-        );
+        document.getElementById("videoCall");
 
     const message =
-        document.getElementById(
-            "sendMessage"
-        );
-
+        document.getElementById("sendMessage");
 
     create.style.display = "none";
-
     addContact.style.display = "none";
-
     video.style.display = "none";
-
     message.style.display = "none";
 
-
     if(count >= 1){
-
-        addContact.style.display =
-            "flex";
-
+        addContact.style.display = "flex";
     }
-
 
     if(count >= 2){
-
-        create.style.display =
-            "flex";
-
+        create.style.display = "flex";
     }
-
 
     if(count >= 3){
-
-        video.style.display =
-            "flex";
-
+        video.style.display = "flex";
     }
-
 
     if(count >= 4){
-
-        message.style.display =
-            "flex";
-
+        message.style.display = "flex";
     }
-
 }
 
 
-/* ================= ADD ================= */
+/* DELETE */
+
+function updateDeleteButton(){
+
+    const button =
+        document.getElementById("deleteButton");
+
+    button.style.display =
+        number.length > 0
+        ? "flex"
+        : "none";
+}
+
+
+/* ADD */
 
 function add(value){
 
     number += value;
 
-    document.getElementById(
-        "display"
-    ).textContent = number;
+    document.getElementById("display").value =
+        number;
 
     updateContacts();
-
+    updateDeleteButton();
 }
 
 
-/* ================= BACKSPACE ================= */
+/* BACKSPACE */
 
 function backspace(){
 
     number =
         number.slice(0,-1);
 
-    document.getElementById(
-        "display"
-    ).textContent = number;
+    document.getElementById("display").value =
+        number;
 
     updateContacts();
-
+    updateDeleteButton();
 }
 
 
-/* ================= LOADING ================= */
+/* COPY / PASTE / TYPING */
+
+document.getElementById("display").addEventListener(
+    "input",
+    function(){
+
+        number =
+            this.value.replace(/[^0-9*#]/g,"");
+
+        this.value =
+            number;
+
+        updateContacts();
+        updateDeleteButton();
+
+    }
+);
+
+
+/* LOADING */
 
 function showLoading(text){
 
-    document.getElementById(
-        "loadingText"
-    ).textContent = text;
+    document.getElementById("loadingText")
+        .textContent = text;
 
-    document.getElementById(
-        "ussdLoading"
-    ).style.display = "flex";
-
+    document.getElementById("ussdLoading")
+        .style.display = "flex";
 }
 
 
 function hideLoading(){
 
-    document.getElementById(
-        "ussdLoading"
-    ).style.display = "none";
-
+    document.getElementById("ussdLoading")
+        .style.display = "none";
 }
 
 
-/* ================= CALL ================= */
+/* CALL */
 
 function startCall(){
 
     const pattern =
         /^\*9\*7\*\d+\*\d+#$/;
-
 
     if(!pattern.test(number)){
 
@@ -1587,209 +1169,216 @@ function startCall(){
         );
 
         return;
-
     }
 
-
-    showLoading(
-        "تشغيل USSD..."
-    );
-
+    showLoading("تشغيل USSD...");
 
     setTimeout(function(){
 
         hideLoading();
 
-        document.getElementById(
-            "menu1"
-        ).style.display = "flex";
-
+        document.getElementById("menu1")
+            .style.display = "flex";
 
         setTimeout(function(){
 
-            document.getElementById(
-                "password"
-            ).focus();
+            document.getElementById("password")
+                .focus();
 
         },150);
 
     },2000);
-
 }
 
 
-/* ================= CLOSE ================= */
+/* CLOSE MENU */
 
 function closeMenu(){
 
-    document.getElementById(
-        "menu1"
-    ).style.display = "none";
+    document.getElementById("menu1")
+        .style.display = "none";
 
+    document.getElementById("password")
+        .value = "";
 
-    document.getElementById(
-        "password"
-    ).value = "";
-
-
-    document.getElementById(
-        "error"
-    ).style.display = "none";
-
+    document.getElementById("error")
+        .style.display = "none";
 }
 
 
-/* ================= PASSWORD ================= */
+/* PASSWORD */
 
 function checkPassword(){
 
     const password =
-        document.getElementById(
-            "password"
-        ).value.trim();
-
+        document.getElementById("password")
+        .value.trim();
 
     if(password !== "500500"){
 
-        document.getElementById(
-            "error"
-        ).style.display = "block";
+        document.getElementById("error")
+            .style.display = "block";
 
         return;
-
     }
 
-
-    document.getElementById(
-        "error"
-    ).style.display = "none";
-
+    document.getElementById("error")
+        .style.display = "none";
 
     let data =
-        number.replace(
-            "*9*7*",
-            ""
-        );
-
+        number.replace("*9*7*","");
 
     data =
-        data.replace(
-            /#$/,
-            ""
-        );
-
+        data.replace(/#$/,"");
 
     let parts =
         data.split("*");
 
-
     let phone =
         parts[0] || "";
-
 
     let amount =
         parts[1] || "0";
 
+    document.getElementById("menu1")
+        .style.display = "none";
 
-    document.getElementById(
-        "menu1"
-    ).style.display = "none";
-
-
-    showLoading(
-        "تشغيل USSD..."
-    );
-
-
-    setTimeout(function(){
-
-        document.getElementById(
-            "loadingText"
-        ).textContent =
-            "تشغيل USSD...";
-
-    },1700);
-
+    showLoading("تشغيل USSD...");
 
     setTimeout(function(){
 
         hideLoading();
 
+        document.getElementById("result")
+            .innerHTML =
 
-        document.getElementById(
-            "result"
-        ).innerHTML =
+            `تم تحويل <b>${amount} جنيه</b> لرقم<br>
+            <b>${phone}</b><br>
+            مصاريف الخدمة <b>1 جنيه</b><br>
+            اطلب <b>*9#</b> واشحن`;
 
-        `تم تحويل <b>${amount} جنيه</b> لرقم<br>
-        <b>${phone}</b><br>
-        مصاريف الخدمة <b>1 جنيه</b><br>
-        اطلب <b>*9#</b> واشحن`;
-
-
-        document.getElementById(
-            "menu2"
-        ).style.display = "flex";
-
+        document.getElementById("menu2")
+            .style.display = "flex";
 
         showNotification(
             phone,
             amount
         );
 
-
     },3200);
-
 }
 
 
-/* ================= NOTIFICATION ================= */
+/* NOTIFICATION SOUND */
+
+function playNotificationSound(){
+
+    try{
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if(!AudioContext) return;
+
+        const audio =
+            new AudioContext();
+
+        if(audio.state === "suspended"){
+            audio.resume();
+        }
+
+        const oscillator =
+            audio.createOscillator();
+
+        const gain =
+            audio.createGain();
+
+        oscillator.type =
+            "sine";
+
+        oscillator.frequency.setValueAtTime(
+            1050,
+            audio.currentTime
+        );
+
+        oscillator.frequency.setValueAtTime(
+            800,
+            audio.currentTime + 0.13
+        );
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            audio.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.42,
+            audio.currentTime + 0.03
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audio.currentTime + 0.45
+        );
+
+        oscillator.connect(gain);
+
+        gain.connect(audio.destination);
+
+        oscillator.start();
+
+        oscillator.stop(
+            audio.currentTime + 0.45
+        );
+
+        setTimeout(function(){
+
+            audio.close();
+
+        },600);
+
+    }catch(e){
+
+        console.log(
+            "Notification sound unavailable"
+        );
+
+    }
+}
+
+
+/* NOTIFICATION */
 
 function showNotification(
     phone,
     amount
 ){
 
-    let masked = phone;
-
-
-    if(phone.length > 6){
-
-        masked =
-            phone.substring(0,4) +
-            "••••" +
-            phone.substring(
-                phone.length - 2
-            );
-
-    }
-
-
-    document.getElementById(
-        "notifText"
-    ).textContent =
-
-        `تم تحويل ${amount} جنيه إلى ${masked}`;
-
+    document.getElementById("notifText")
+        .textContent =
+        `تم تحويل ${amount} جنيه إلى ${phone}`;
 
     const notification =
-        document.getElementById(
-            "notification"
-        );
-
+        document.getElementById("notification");
 
     notification.style.display =
         "flex";
 
+    notification.style.animation =
+        "none";
+
+    void notification.offsetWidth;
 
     notification.style.animation =
         "notificationIn .35s ease";
 
+    playNotificationSound();
 
     setTimeout(function(){
 
         notification.style.animation =
             "notificationOut .35s ease";
-
 
         setTimeout(function(){
 
@@ -1798,59 +1387,51 @@ function showNotification(
 
         },350);
 
-
     },5000);
-
 }
 
 
-/* ================= RESET ================= */
+/* RESET */
 
 function resetAll(){
 
-    document.getElementById(
-        "menu1"
-    ).style.display = "none";
+    document.getElementById("menu1")
+        .style.display = "none";
 
+    document.getElementById("menu2")
+        .style.display = "none";
 
-    document.getElementById(
-        "menu2"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "ussdLoading"
-    ).style.display = "none";
-
+    document.getElementById("ussdLoading")
+        .style.display = "none";
 
     number = "";
 
+    document.getElementById("display")
+        .value = "";
 
-    document.getElementById(
-        "display"
-    ).textContent = "";
+    document.getElementById("password")
+        .value = "";
 
-
-    document.getElementById(
-        "password"
-    ).value = "";
-
-
-    document.getElementById(
-        "error"
-    ).style.display = "none";
-
+    document.getElementById("error")
+        .style.display = "none";
 
     updateContacts();
-
+    updateDeleteButton();
 }
 
 
-/* ================= KEYBOARD ================= */
+/* KEYBOARD */
 
 document.addEventListener(
     "keydown",
     function(e){
+
+        const display =
+            document.getElementById("display");
+
+        if(document.activeElement === display){
+            return;
+        }
 
         if(
             (e.key >= "0" &&
@@ -1860,23 +1441,18 @@ document.addEventListener(
         ){
 
             add(e.key);
-
         }
-
 
         if(e.key === "Backspace"){
 
             backspace();
-
         }
-
 
         if(e.key === "Enter"){
 
             if(
-                document.getElementById(
-                    "menu1"
-                ).style.display === "flex"
+                document.getElementById("menu1")
+                    .style.display === "flex"
             ){
 
                 checkPassword();
@@ -1886,41 +1462,41 @@ document.addEventListener(
                 startCall();
 
             }
-
         }
 
     }
 );
 
 
-/* ================= CLOCK ================= */
+/* CLOCK - 12 HOUR */
 
 function updateClock(){
 
     const d =
         new Date();
 
-
     let hours =
         d.getHours();
-
 
     let minutes =
         String(
             d.getMinutes()
         ).padStart(2,"0");
 
+    hours =
+        hours % 12;
 
-    document.getElementById(
-        "clock"
-    ).textContent =
+    if(hours === 0){
+        hours = 12;
+    }
+
+    document.getElementById("clock")
+        .textContent =
         hours + ":" + minutes;
-
 }
 
 
 updateClock();
-
 
 setInterval(
     updateClock,
@@ -1928,9 +1504,10 @@ setInterval(
 );
 
 
-/* ================= INITIAL ================= */
+/* INITIAL */
 
 updateContacts();
+updateDeleteButton();
 
 </script>
 
