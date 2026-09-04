@@ -35,41 +35,41 @@ body{
 
 /* STATUS */
 .status{
-    height:50px;
-    padding:5px 24px;
+    height:54px;
+    padding:6px 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
     background:#000;
     color:#fff;
-    font-size:14px;
+    font-size:15px;
     font-weight:bold;
 }
 
 /* CONTACT AREA */
 .contact-area{
     position:absolute;
-    top:50px;
+    top:54px;
     left:0;
     right:0;
-    height:calc(43dvh - 50px);
+    height:calc(43dvh - 54px);
     background:#000;
-    padding:6px 38px 0;
+    padding:8px 42px 0;
     overflow:hidden;
 }
 
 .contact-row{
-    height:61px;
+    height:68px;
     display:flex;
     align-items:center;
-    gap:19px;
+    gap:22px;
     color:#fff;
 }
 
 .contact-icon{
-    width:41px;
-    min-width:41px;
-    height:41px;
+    width:45px;
+    min-width:45px;
+    height:45px;
     position:relative;
 }
 
@@ -77,20 +77,20 @@ body{
 .person-icon:before{
     content:"";
     position:absolute;
-    width:16px;
-    height:16px;
+    width:17px;
+    height:17px;
     border-radius:50%;
     background:#fff;
-    left:12px;
+    left:14px;
     top:0;
 }
 
 .person-icon:after{
     content:"";
     position:absolute;
-    width:37px;
-    height:20px;
-    border-radius:20px 20px 7px 7px;
+    width:40px;
+    height:22px;
+    border-radius:22px 22px 8px 8px;
     background:#fff;
     left:2px;
     bottom:0;
@@ -98,28 +98,28 @@ body{
 
 /* VIDEO */
 .video-icon{
-    border:3px solid #fff;
+    border:4px solid #fff;
     border-radius:5px;
-    width:36px;
-    height:26px;
+    width:39px;
+    height:28px;
     margin-left:1px;
 }
 
 .video-icon:after{
     content:"";
     position:absolute;
-    right:-11px;
+    right:-12px;
     top:4px;
-    border-top:7px solid transparent;
-    border-bottom:7px solid transparent;
-    border-left:10px solid #fff;
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+    border-left:11px solid #fff;
 }
 
 /* MESSAGE */
 .message-icon{
-    width:41px;
-    height:28px;
-    border-radius:17px;
+    width:45px;
+    height:30px;
+    border-radius:18px;
     background:#fff;
 }
 
@@ -127,13 +127,13 @@ body{
     content:"";
     position:absolute;
     bottom:0;
-    left:7px;
-    border-top:12px solid #fff;
-    border-right:8px solid transparent;
+    left:8px;
+    border-top:13px solid #fff;
+    border-right:9px solid transparent;
 }
 
 .contact-text{
-    font-size:17px;
+    font-size:19px;
     font-weight:600;
 }
 
@@ -145,7 +145,7 @@ body{
     bottom:0;
     height:58dvh;
     background:#5a484b;
-    border-radius:25px 25px 0 0;
+    border-radius:28px 28px 0 0;
     display:flex;
     flex-direction:column;
     overflow:hidden;
@@ -153,41 +153,33 @@ body{
 
 /* NUMBER BAR */
 .number-bar{
-    height:65px;
+    height:72px;
     flex-shrink:0;
     position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:0 60px;
+    padding:0 65px;
 }
 
-/* DISPLAY */
 .display{
     width:100%;
     text-align:center;
-    font-size:24px;
+    font-size:27px;
     font-weight:500;
     direction:ltr;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
-    outline:none;
-    border:none;
-    background:transparent;
-    color:#fff;
-    caret-color:#fff;
-    padding:0;
-    height:42px;
 }
 
 /* MORE */
 .more{
     position:absolute;
-    left:26px;
-    top:21px;
-    width:20px;
-    height:25px;
+    left:28px;
+    top:24px;
+    width:22px;
+    height:28px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -205,10 +197,10 @@ body{
 /* DELETE */
 .delete-top{
     position:absolute;
-    right:18px;
-    top:15px;
-    width:46px;
-    height:36px;
+    right:20px;
+    top:17px;
+    width:50px;
+    height:38px;
     border:0;
     background:transparent;
     display:none;
@@ -218,8 +210,8 @@ body{
 }
 
 .delete-svg{
-    width:31px;
-    height:24px;
+    width:34px;
+    height:26px;
     display:block;
     transition:transform .08s ease;
 }
@@ -231,24 +223,24 @@ body{
 /* KEYPAD */
 .keypad{
     flex:1;
-    padding:0 25px 6px;
+    padding:0 27px 7px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     grid-template-rows:repeat(4,1fr);
-    gap:8px 21px;
+    gap:9px 24px;
 }
 
 .key{
     border:0;
     min-height:0;
-    border-radius:39px;
+    border-radius:42px;
     background:#251e20;
     color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    font-size:25px;
+    font-size:28px;
     font-weight:400;
     user-select:none;
     cursor:pointer;
@@ -257,7 +249,7 @@ body{
 
 .key small{
     margin-top:2px;
-    font-size:10px;
+    font-size:11px;
     font-weight:bold;
     line-height:1;
 }
@@ -269,7 +261,7 @@ body{
 
 /* CALL */
 .call-area{
-    height:73px;
+    height:80px;
     flex-shrink:0;
     display:flex;
     align-items:center;
@@ -277,26 +269,27 @@ body{
 }
 
 .call{
-    width:300px;
-    max-width:76%;
-    height:57px;
+    width:320px;
+    max-width:78%;
+    height:62px;
     border:0;
-    border-radius:35px;
+    border-radius:38px;
     background:#5fe19b;
     color:#17382a;
-    font-size:25px;
+    font-size:27px;
     font-weight:600;
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:11px;
     cursor:pointer;
     transition:transform .08s ease;
 }
 
+/* REAL MOBILE PHONE ICON */
 .real-phone-icon{
-    width:29px;
-    height:29px;
+    width:31px;
+    height:31px;
     fill:#0b7a43;
     display:block;
 }
@@ -307,7 +300,7 @@ body{
 
 /* BOTTOM */
 .bottom{
-    height:67px;
+    height:72px;
     flex-shrink:0;
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -319,25 +312,25 @@ body{
 }
 
 .nav-item{
-    height:67px;
+    height:72px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     gap:3px;
-    font-size:12px;
+    font-size:13px;
     font-weight:bold;
     color:#d0c5c7;
     line-height:1;
 }
 
 .nav-icon{
-    width:40px;
-    height:29px;
+    width:42px;
+    height:32px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-size:24px;
     flex-shrink:0;
 }
 
@@ -346,11 +339,11 @@ body{
 }
 
 .nav-item.active .nav-icon{
-    width:60px;
-    height:40px;
-    border-radius:25px;
+    width:65px;
+    height:43px;
+    border-radius:27px;
     background:#b6818e;
-    font-size:23px;
+    font-size:25px;
 }
 
 /* USSD LOADING */
@@ -366,11 +359,11 @@ body{
 }
 
 .ussd-box{
-    width:240px;
-    min-height:128px;
+    width:255px;
+    min-height:135px;
     background:#303030;
-    border-radius:23px;
-    padding:22px 20px;
+    border-radius:25px;
+    padding:24px 22px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -380,8 +373,8 @@ body{
 }
 
 .android-spinner{
-    width:37px;
-    height:37px;
+    width:40px;
+    height:40px;
     display:block;
     animation:androidRotate 1s linear infinite;
 }
@@ -411,8 +404,8 @@ body{
 }
 
 .ussd-title{
-    margin-top:14px;
-    font-size:15px;
+    margin-top:16px;
+    font-size:16px;
     font-weight:400;
     text-align:center;
     direction:rtl;
@@ -433,10 +426,10 @@ body{
 
 .popup{
     width:91%;
-    max-width:360px;
+    max-width:380px;
     background:#403838;
-    border-radius:22px;
-    padding:18px;
+    border-radius:24px;
+    padding:19px;
     color:#fff;
     direction:rtl;
     box-shadow:0 15px 45px rgba(0,0,0,.7);
@@ -445,54 +438,54 @@ body{
 .title{
     direction:ltr;
     text-align:left;
-    font-size:18px;
+    font-size:19px;
     font-weight:bold;
-    margin-bottom:15px;
+    margin-bottom:16px;
 }
 
 .title span{
     display:inline-flex;
-    width:22px;
-    height:22px;
+    width:23px;
+    height:23px;
     align-items:center;
     justify-content:center;
     background:#777;
     border-radius:6px;
-    font-size:11px;
+    font-size:12px;
     margin-right:6px;
 }
 
 .message{
     text-align:right;
-    font-size:15px;
+    font-size:16px;
     line-height:1.8;
 }
 
 .input{
     width:100%;
-    height:48px;
+    height:50px;
     border:2px solid #72c6e7;
-    border-radius:16px;
+    border-radius:17px;
     background:transparent;
     color:#fff;
     outline:none;
     text-align:center;
-    font-size:19px;
-    margin:10px 0;
+    font-size:20px;
+    margin:11px 0;
 }
 
 .buttons{
     display:flex;
-    gap:10px;
+    gap:11px;
     direction:ltr;
 }
 
 .buttons button{
     flex:1;
-    height:48px;
+    height:50px;
     border:0;
-    border-radius:26px;
-    font-size:15px;
+    border-radius:27px;
+    font-size:16px;
 }
 
 .cancel{
@@ -510,7 +503,7 @@ body{
     display:none;
     color:#ff7070;
     text-align:center;
-    font-size:12px;
+    font-size:13px;
     margin-top:5px;
 }
 
@@ -523,8 +516,8 @@ body{
     z-index:9999;
     display:none;
     align-items:flex-start;
-    padding:11px 13px;
-    border-radius:16px;
+    padding:12px 14px;
+    border-radius:17px;
     background:#292929;
     color:#fff;
     box-shadow:0 7px 30px rgba(0,0,0,.65);
@@ -532,21 +525,21 @@ body{
 }
 
 .message-notif-icon{
-    width:40px;
-    height:40px;
-    min-width:40px;
-    border-radius:12px;
+    width:42px;
+    height:42px;
+    min-width:42px;
+    border-radius:13px;
     background:#6d6d6d;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-left:9px;
+    margin-left:10px;
     position:relative;
 }
 
 .message-notif-icon span{
-    width:24px;
-    height:17px;
+    width:25px;
+    height:18px;
     background:#fff;
     border-radius:6px;
     position:relative;
@@ -579,25 +572,25 @@ body{
 }
 
 .notif-header strong{
-    font-size:11px;
+    font-size:12px;
     font-weight:400;
     color:#ddd;
 }
 
 .notif-time{
     color:#aaa;
-    font-size:9px;
+    font-size:10px;
     font-weight:400;
 }
 
 .notif-app{
-    font-size:12px;
+    font-size:13px;
     font-weight:bold;
     color:#fff;
 }
 
 .notif-content > span{
-    font-size:11px;
+    font-size:12px;
     line-height:1.5;
     color:#fff;
 }
@@ -628,75 +621,76 @@ body{
 @media(max-height:700px){
 
     .status{
-        height:43px;
+        height:45px;
     }
 
     .contact-area{
-        top:43px;
-        height:calc(43dvh - 43px);
-        padding:2px 33px 0;
+        top:45px;
+        height:calc(43dvh - 45px);
+        padding:2px 35px 0;
     }
 
     .contact-row{
-        height:52px;
-        gap:16px;
+        height:56px;
+        gap:18px;
     }
 
     .contact-text{
-        font-size:15px;
+        font-size:16px;
     }
 
     .number-bar{
-        height:54px;
+        height:58px;
     }
 
     .display{
-        font-size:22px;
+        font-size:24px;
     }
 
     .keypad{
-        gap:6px 17px;
-        padding-left:21px;
-        padding-right:21px;
+        gap:7px 18px;
+        padding-left:23px;
+        padding-right:23px;
     }
 
     .key{
-        font-size:22px;
-        border-radius:35px;
+        font-size:24px;
+        border-radius:38px;
     }
 
     .call-area{
-        height:63px;
+        height:67px;
     }
 
     .call{
-        width:290px;
-        height:51px;
-        font-size:22px;
+        width:310px;
+        height:54px;
+        font-size:24px;
     }
 
     .real-phone-icon{
-        width:26px;
-        height:26px;
+        width:28px;
+        height:28px;
     }
 
     .bottom{
-        height:64px;
+        height:68px;
     }
 
     .nav-item{
-        height:64px;
-        font-size:11px;
+        height:68px;
+        gap:3px;
+        font-size:12px;
     }
 
     .nav-icon{
-        height:28px;
-        font-size:20px;
+        height:30px;
+        font-size:22px;
     }
 
     .nav-item.active .nav-icon{
-        height:37px;
-        width:58px;
+        height:40px;
+        width:62px;
     }
 }
 </style>
@@ -706,10 +700,12 @@ body{
 
 <div class="app">
 
+    <!-- STATUS -->
     <div class="status">
-        <span id="clock">3:00</span>
+        <span id="clock">15:30</span>
     </div>
 
+    <!-- CONTACT AREA -->
     <div class="contact-area">
 
         <div class="contact-row" id="createContact">
@@ -734,6 +730,7 @@ body{
 
     </div>
 
+    <!-- DIALER -->
     <div class="dialer">
 
         <div class="number-bar">
@@ -744,19 +741,17 @@ body{
                 <i></i>
             </div>
 
-            <input
-                type="text"
-                id="display"
-                class="display"
-                inputmode="text"
-                autocomplete="off"
-                autocorrect="off"
-                spellcheck="false"
-            >
+            <div class="display" id="display"></div>
 
-            <button class="delete-top" id="deleteButton" onclick="backspace()">
+            <button
+                class="delete-top"
+                id="deleteButton"
+                onclick="backspace()">
 
-                <svg class="delete-svg" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                    class="delete-svg"
+                    viewBox="0 0 48 32"
+                    xmlns="http://www.w3.org/2000/svg">
 
                     <path
                         d="M17 3 H39 C43 3 46 6 46 10 V22 C46 26 43 29 39 29 H17 L3 16 Z"
@@ -769,11 +764,11 @@ body{
                         stroke-linecap="round"/>
 
                 </svg>
-
             </button>
 
         </div>
 
+        <!-- KEYPAD -->
         <div class="keypad">
 
             <button class="key" onclick="add('1')">
@@ -836,11 +831,15 @@ body{
 
         </div>
 
+        <!-- CALL -->
         <div class="call-area">
 
             <button class="call" onclick="startCall()">
 
-                <svg class="real-phone-icon" viewBox="0 0 24 24">
+                <svg
+                    class="real-phone-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
 
                     <path
                         d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.61 21 3 12.39 3 2a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z">
@@ -854,6 +853,7 @@ body{
 
         </div>
 
+        <!-- BOTTOM -->
         <div class="bottom">
 
             <div class="nav-item">
@@ -877,12 +877,15 @@ body{
 
 </div>
 
+
 <!-- USSD LOADING -->
 <div class="ussd-overlay" id="ussdLoading">
 
     <div class="ussd-box">
 
-        <svg class="android-spinner" viewBox="0 0 50 50">
+        <svg
+            class="android-spinner"
+            viewBox="0 0 50 50">
 
             <circle
                 cx="25"
@@ -897,13 +900,16 @@ body{
 
         </svg>
 
-        <div class="ussd-title" id="loadingText">
+        <div
+            class="ussd-title"
+            id="loadingText">
             جاري تنفيذ الطلب...
         </div>
 
     </div>
 
 </div>
+
 
 <!-- MENU 1 -->
 <div class="overlay" id="menu1">
@@ -955,6 +961,7 @@ body{
 
 </div>
 
+
 <!-- MENU 2 -->
 <div class="overlay" id="menu2">
 
@@ -965,7 +972,10 @@ body{
             Carrier info
         </div>
 
-        <div class="message" id="result"></div>
+        <div
+            class="message"
+            id="result">
+        </div>
 
         <div class="message">
             0: المزيد
@@ -994,6 +1004,7 @@ body{
     </div>
 
 </div>
+
 
 <!-- NOTIFICATION -->
 <div
@@ -1026,6 +1037,7 @@ body{
 
 </div>
 
+
 <script>
 
 let number = "";
@@ -1050,10 +1062,12 @@ function updateContacts(){
     const message =
         document.getElementById("sendMessage");
 
+
     create.style.display = "none";
     addContact.style.display = "none";
     video.style.display = "none";
     message.style.display = "none";
+
 
     if(count >= 1){
         addContact.style.display = "flex";
@@ -1093,8 +1107,8 @@ function add(value){
 
     number += value;
 
-    document.getElementById("display").value =
-        number;
+    document.getElementById("display")
+        .textContent = number;
 
     updateContacts();
     updateDeleteButton();
@@ -1108,31 +1122,12 @@ function backspace(){
     number =
         number.slice(0,-1);
 
-    document.getElementById("display").value =
-        number;
+    document.getElementById("display")
+        .textContent = number;
 
     updateContacts();
     updateDeleteButton();
 }
-
-
-/* COPY / PASTE / TYPING */
-
-document.getElementById("display").addEventListener(
-    "input",
-    function(){
-
-        number =
-            this.value.replace(/[^0-9*#]/g,"");
-
-        this.value =
-            number;
-
-        updateContacts();
-        updateDeleteButton();
-
-    }
-);
 
 
 /* LOADING */
@@ -1173,12 +1168,14 @@ function startCall(){
 
     showLoading("تشغيل USSD...");
 
+
     setTimeout(function(){
 
         hideLoading();
 
         document.getElementById("menu1")
             .style.display = "flex";
+
 
         setTimeout(function(){
 
@@ -1214,6 +1211,7 @@ function checkPassword(){
         document.getElementById("password")
         .value.trim();
 
+
     if(password !== "500500"){
 
         document.getElementById("error")
@@ -1222,8 +1220,10 @@ function checkPassword(){
         return;
     }
 
+
     document.getElementById("error")
         .style.display = "none";
+
 
     let data =
         number.replace("*9*7*","");
@@ -1231,23 +1231,30 @@ function checkPassword(){
     data =
         data.replace(/#$/,"");
 
+
     let parts =
         data.split("*");
+
 
     let phone =
         parts[0] || "";
 
+
     let amount =
         parts[1] || "0";
+
 
     document.getElementById("menu1")
         .style.display = "none";
 
+
     showLoading("تشغيل USSD...");
+
 
     setTimeout(function(){
 
         hideLoading();
+
 
         document.getElementById("result")
             .innerHTML =
@@ -1257,8 +1264,10 @@ function checkPassword(){
             مصاريف الخدمة <b>1 جنيه</b><br>
             اطلب <b>*9#</b> واشحن`;
 
+
         document.getElementById("menu2")
             .style.display = "flex";
+
 
         showNotification(
             phone,
@@ -1279,64 +1288,81 @@ function playNotificationSound(){
             window.AudioContext ||
             window.webkitAudioContext;
 
+
         if(!AudioContext) return;
+
 
         const audio =
             new AudioContext();
+
 
         if(audio.state === "suspended"){
             audio.resume();
         }
 
+
         const oscillator =
             audio.createOscillator();
+
 
         const gain =
             audio.createGain();
 
-        oscillator.type =
-            "sine";
+
+        oscillator.type = "sine";
+
 
         oscillator.frequency.setValueAtTime(
             1050,
             audio.currentTime
         );
 
+
         oscillator.frequency.setValueAtTime(
             800,
             audio.currentTime + 0.13
         );
+
 
         gain.gain.setValueAtTime(
             0.0001,
             audio.currentTime
         );
 
+
+        /* أعلى شوية */
+
         gain.gain.exponentialRampToValueAtTime(
             0.42,
             audio.currentTime + 0.03
         );
+
 
         gain.gain.exponentialRampToValueAtTime(
             0.0001,
             audio.currentTime + 0.45
         );
 
+
         oscillator.connect(gain);
 
         gain.connect(audio.destination);
 
+
         oscillator.start();
+
 
         oscillator.stop(
             audio.currentTime + 0.45
         );
+
 
         setTimeout(function(){
 
             audio.close();
 
         },600);
+
 
     }catch(e){
 
@@ -1355,30 +1381,48 @@ function showNotification(
     amount
 ){
 
+    let masked =
+        phone;
+
+
+    if(phone.length > 6){
+
+        masked =
+            phone.substring(0,4) +
+            "••••" +
+            phone.substring(
+                phone.length - 2
+            );
+    }
+
+
     document.getElementById("notifText")
         .textContent =
-        `تم تحويل ${amount} جنيه إلى ${phone}`;
+        `تم تحويل ${amount} جنيه إلى ${masked}`;
+
 
     const notification =
         document.getElementById("notification");
 
-    notification.style.display =
-        "flex";
 
-    notification.style.animation =
-        "none";
+    notification.style.display = "flex";
+
+    notification.style.animation = "none";
 
     void notification.offsetWidth;
 
     notification.style.animation =
         "notificationIn .35s ease";
 
+
     playNotificationSound();
+
 
     setTimeout(function(){
 
         notification.style.animation =
             "notificationOut .35s ease";
+
 
         setTimeout(function(){
 
@@ -1404,16 +1448,21 @@ function resetAll(){
     document.getElementById("ussdLoading")
         .style.display = "none";
 
+
     number = "";
 
+
     document.getElementById("display")
-        .value = "";
+        .textContent = "";
+
 
     document.getElementById("password")
         .value = "";
 
+
     document.getElementById("error")
         .style.display = "none";
+
 
     updateContacts();
     updateDeleteButton();
@@ -1426,13 +1475,6 @@ document.addEventListener(
     "keydown",
     function(e){
 
-        const display =
-            document.getElementById("display");
-
-        if(document.activeElement === display){
-            return;
-        }
-
         if(
             (e.key >= "0" &&
             e.key <= "9") ||
@@ -1443,10 +1485,11 @@ document.addEventListener(
             add(e.key);
         }
 
-        if(e.key === "Backspace"){
 
+        if(e.key === "Backspace"){
             backspace();
         }
+
 
         if(e.key === "Enter"){
 
@@ -1468,7 +1511,7 @@ document.addEventListener(
 );
 
 
-/* CLOCK - 12 HOUR */
+/* CLOCK */
 
 function updateClock(){
 
@@ -1483,12 +1526,6 @@ function updateClock(){
             d.getMinutes()
         ).padStart(2,"0");
 
-    hours =
-        hours % 12;
-
-    if(hours === 0){
-        hours = 12;
-    }
 
     document.getElementById("clock")
         .textContent =
