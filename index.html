@@ -21,7 +21,9 @@ html,body{
     font-family:Arial,Helvetica,sans-serif;
 }
 
-body{color:#fff;}
+body{
+    color:#fff;
+}
 
 .app{
     width:100%;
@@ -29,16 +31,11 @@ body{color:#fff;}
     min-height:100vh;
     background:#000;
     position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    inset:0;
     overflow:hidden;
 }
 
-/* =========================
-   تصغير عام حوالي 15%
-   ========================= */
+/* STATUS */
 
 .status{
     height:47px;
@@ -51,6 +48,8 @@ body{color:#fff;}
     font-size:13px;
     font-weight:bold;
 }
+
+/* CONTACTS */
 
 .contact-area{
     position:absolute;
@@ -139,6 +138,8 @@ body{color:#fff;}
     font-weight:600;
 }
 
+/* DIALER */
+
 .dialer{
     position:absolute;
     left:0;
@@ -178,7 +179,6 @@ body{color:#fff;}
     caret-color:#fff;
     padding:0;
     height:40px;
-
     user-select:text;
     -webkit-user-select:text;
 }
@@ -232,6 +232,8 @@ body{color:#fff;}
     transform:scale(.86);
 }
 
+/* KEYPAD */
+
 .keypad{
     flex:1;
     padding:0 23px 6px;
@@ -270,6 +272,8 @@ body{color:#fff;}
     background:#403638;
 }
 
+/* CALL */
+
 .call-area{
     height:68px;
     flex-shrink:0;
@@ -306,6 +310,8 @@ body{color:#fff;}
 .call:active{
     transform:scale(.94);
 }
+
+/* BOTTOM */
 
 .bottom{
     height:61px;
@@ -355,6 +361,7 @@ body{color:#fff;}
 }
 
 /* USSD */
+
 .ussd-overlay{
     position:fixed;
     inset:0;
@@ -393,7 +400,9 @@ body{color:#fff;}
 }
 
 @keyframes androidRotate{
-    100%{transform:rotate(360deg);}
+    100%{
+        transform:rotate(360deg);
+    }
 }
 
 @keyframes androidDash{
@@ -401,10 +410,12 @@ body{color:#fff;}
         stroke-dasharray:1,150;
         stroke-dashoffset:0;
     }
+
     50%{
         stroke-dasharray:90,150;
         stroke-dashoffset:-35;
     }
+
     100%{
         stroke-dasharray:90,150;
         stroke-dashoffset:-125;
@@ -421,6 +432,7 @@ body{color:#fff;}
 }
 
 /* POPUP */
+
 .overlay{
     position:fixed;
     inset:0;
@@ -441,6 +453,11 @@ body{color:#fff;}
     color:#fff;
     direction:rtl;
     box-shadow:0 15px 45px rgba(0,0,0,.7);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
 }
 
 .title{
@@ -449,6 +466,7 @@ body{color:#fff;}
     font-size:16px;
     font-weight:bold;
     margin-bottom:13px;
+    flex-shrink:0;
 }
 
 .title span{
@@ -467,9 +485,12 @@ body{color:#fff;}
     text-align:right;
     font-size:14px;
     line-height:1.7;
+    flex-shrink:0;
 }
 
-.input{
+/* خانة الرقم السري */
+
+#password{
     width:100%;
     height:43px;
     border:2px solid #72c6e7;
@@ -479,13 +500,31 @@ body{color:#fff;}
     outline:none;
     text-align:center;
     font-size:18px;
-    margin:9px 0;
+    margin-top:16px;
+    margin-bottom:9px;
+    flex-shrink:0;
+    direction:ltr;
 }
+
+/* الخطأ */
+
+#error{
+    display:none;
+    color:#ff7070;
+    text-align:center;
+    font-size:12px;
+    margin-top:0;
+    margin-bottom:7px;
+    flex-shrink:0;
+}
+
+/* الأزرار */
 
 .buttons{
     display:flex;
     gap:9px;
     direction:ltr;
+    flex-shrink:0;
 }
 
 .buttons button{
@@ -507,15 +546,34 @@ body{color:#fff;}
     font-weight:bold;
 }
 
-.error{
-    display:none;
-    color:#ff7070;
+/* ===================================
+   خانة 0: المزيد
+   نفس شكل خانة الرقم السري
+   =================================== */
+
+#menu2 .input{
+    width:100%;
+    height:43px;
+    border:2px solid #72c6e7;
+    border-radius:15px;
+    background:transparent;
+    color:#fff;
+    outline:none;
     text-align:center;
-    font-size:12px;
-    margin-top:4px;
+    font-size:18px;
+    margin-top:16px;
+    margin-bottom:9px;
+    flex-shrink:0;
+    direction:ltr;
+}
+
+#menu2 .input:focus{
+    border-color:#72c6e7;
+    outline:none;
 }
 
 /* NOTIFICATION */
+
 .notification{
     position:fixed;
     top:10px;
@@ -608,6 +666,7 @@ body{color:#fff;}
         transform:translateY(-130%);
         opacity:0;
     }
+
     to{
         transform:translateY(0);
         opacity:1;
@@ -619,15 +678,14 @@ body{color:#fff;}
         transform:translateY(0);
         opacity:1;
     }
+
     to{
         transform:translateY(-130%);
         opacity:0;
     }
 }
 
-/* =========================
-   الشاشات القصيرة
-   ========================= */
+/* SHORT SCREENS */
 
 @media(max-height:700px){
 
@@ -768,19 +826,29 @@ body{color:#fff;}
                 spellcheck="false"
             >
 
-            <button class="delete-top" id="deleteButton" onclick="backspace()">
+            <button
+                class="delete-top"
+                id="deleteButton"
+                onclick="backspace()"
+            >
 
-                <svg class="delete-svg" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                    class="delete-svg"
+                    viewBox="0 0 48 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
 
                     <path
                         d="M17 3 H39 C43 3 46 6 46 10 V22 C46 26 43 29 39 29 H17 L3 16 Z"
-                        fill="#F5F5F5"/>
+                        fill="#F5F5F5"
+                    />
 
                     <path
                         d="M25 10 L35 21 M35 10 L25 21"
                         stroke="#171717"
                         stroke-width="2.8"
-                        stroke-linecap="round"/>
+                        stroke-linecap="round"
+                    />
 
                 </svg>
 
@@ -790,21 +858,63 @@ body{color:#fff;}
 
         <div class="keypad">
 
-            <button class="key" onclick="add('1')">1<small>Q</small></button>
-            <button class="key" onclick="add('2')">2<small>ABC</small></button>
-            <button class="key" onclick="add('3')">3<small>DEF</small></button>
+            <button class="key" onclick="add('1')">
+                1
+                <small>Q</small>
+            </button>
 
-            <button class="key" onclick="add('4')">4<small>GHI</small></button>
-            <button class="key" onclick="add('5')">5<small>JKL</small></button>
-            <button class="key" onclick="add('6')">6<small>MNO</small></button>
+            <button class="key" onclick="add('2')">
+                2
+                <small>ABC</small>
+            </button>
 
-            <button class="key" onclick="add('7')">7<small>PQRS</small></button>
-            <button class="key" onclick="add('8')">8<small>TUV</small></button>
-            <button class="key" onclick="add('9')">9<small>WXYZ</small></button>
+            <button class="key" onclick="add('3')">
+                3
+                <small>DEF</small>
+            </button>
 
-            <button class="key" onclick="add('*')">*</button>
-            <button class="key" onclick="add('0')">0<small>+</small></button>
-            <button class="key" onclick="add('#')">#</button>
+            <button class="key" onclick="add('4')">
+                4
+                <small>GHI</small>
+            </button>
+
+            <button class="key" onclick="add('5')">
+                5
+                <small>JKL</small>
+            </button>
+
+            <button class="key" onclick="add('6')">
+                6
+                <small>MNO</small>
+            </button>
+
+            <button class="key" onclick="add('7')">
+                7
+                <small>PQRS</small>
+            </button>
+
+            <button class="key" onclick="add('8')">
+                8
+                <small>TUV</small>
+            </button>
+
+            <button class="key" onclick="add('9')">
+                9
+                <small>WXYZ</small>
+            </button>
+
+            <button class="key" onclick="add('*')">
+                *
+            </button>
+
+            <button class="key" onclick="add('0')">
+                0
+                <small>+</small>
+            </button>
+
+            <button class="key" onclick="add('#')">
+                #
+            </button>
 
         </div>
 
@@ -812,7 +922,10 @@ body{color:#fff;}
 
             <button class="call" onclick="startCall()">
 
-                <svg class="real-phone-icon" viewBox="0 0 24 24">
+                <svg
+                    class="real-phone-icon"
+                    viewBox="0 0 24 24"
+                >
 
                     <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C11.61 21 3 12.39 3 2a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.56 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"></path>
 
@@ -847,11 +960,17 @@ body{color:#fff;}
 
 </div>
 
+
+<!-- USSD -->
+
 <div class="ussd-overlay" id="ussdLoading">
 
     <div class="ussd-box">
 
-        <svg class="android-spinner" viewBox="0 0 50 50">
+        <svg
+            class="android-spinner"
+            viewBox="0 0 50 50"
+        >
 
             <circle
                 cx="25"
@@ -861,18 +980,24 @@ body{color:#fff;}
                 stroke="#8ab4f8"
                 stroke-width="4"
                 stroke-linecap="round"
-                stroke-dasharray="70 150">
-            </circle>
+                stroke-dasharray="70 150"
+            ></circle>
 
         </svg>
 
-        <div class="ussd-title" id="loadingText">
+        <div
+            class="ussd-title"
+            id="loadingText"
+        >
             جاري تنفيذ الطلب...
         </div>
 
     </div>
 
 </div>
+
+
+<!-- PASSWORD MENU -->
 
 <div class="overlay" id="menu1">
 
@@ -884,16 +1009,27 @@ body{color:#fff;}
         </div>
 
         <div class="message">
+
             ادخل الرقم السري
+
             <br>
+
             1: الإعادة
+
             <br>
+
             2: معرفة الرسوم
+
             <br>
+
             00: الرجوع
+
         </div>
 
-        <div class="error" id="error">
+        <div
+            class="error"
+            id="error"
+        >
             الرقم السري غير صحيح
         </div>
 
@@ -904,15 +1040,22 @@ body{color:#fff;}
             inputmode="numeric"
             autocomplete="off"
             autocorrect="off"
-            spellcheck="false">
+            spellcheck="false"
+        >
 
         <div class="buttons">
 
-            <button class="cancel" onclick="closeMenu()">
+            <button
+                class="cancel"
+                onclick="closeMenu()"
+            >
                 Cancel
             </button>
 
-            <button class="send" onclick="checkPassword()">
+            <button
+                class="send"
+                onclick="checkPassword()"
+            >
                 Send
             </button>
 
@@ -921,6 +1064,9 @@ body{color:#fff;}
     </div>
 
 </div>
+
+
+<!-- RESULT MENU -->
 
 <div class="overlay" id="menu2">
 
@@ -931,27 +1077,38 @@ body{color:#fff;}
             Carrier info
         </div>
 
-        <div class="message" id="result"></div>
+        <div
+            class="message"
+            id="result"
+        ></div>
 
         <div class="message">
             0: المزيد
         </div>
 
+        <!-- نفس خانة الرقم السري -->
         <input
             class="input"
             type="text"
             inputmode="text"
             autocomplete="off"
             autocorrect="off"
-            spellcheck="false">
+            spellcheck="false"
+        >
 
         <div class="buttons">
 
-            <button class="cancel" onclick="resetAll()">
+            <button
+                class="cancel"
+                onclick="resetAll()"
+            >
                 Cancel
             </button>
 
-            <button class="send" onclick="resetAll()">
+            <button
+                class="send"
+                onclick="resetAll()"
+            >
                 Send
             </button>
 
@@ -961,7 +1118,13 @@ body{color:#fff;}
 
 </div>
 
-<div class="notification" id="notification">
+
+<!-- NOTIFICATION -->
+
+<div
+    class="notification"
+    id="notification"
+>
 
     <div class="icon message-notif-icon">
         <span></span>
@@ -970,8 +1133,13 @@ body{color:#fff;}
     <div class="notif-content">
 
         <div class="notif-header">
+
             <strong>رسالة</strong>
-            <span class="notif-time">الآن</span>
+
+            <span class="notif-time">
+                الآن
+            </span>
+
         </div>
 
         <strong class="notif-app">
@@ -984,47 +1152,72 @@ body{color:#fff;}
 
 </div>
 
+
 <script>
 
 let number = "";
 
 
 /* CONTACTS */
+
 function updateContacts(){
 
-    const count = number.replace(/\D/g,"").length;
+    const count =
+        number.replace(/\D/g,"").length;
 
-    const create = document.getElementById("createContact");
-    const addContact = document.getElementById("addContact");
-    const video = document.getElementById("videoCall");
-    const message = document.getElementById("sendMessage");
+    const create =
+        document.getElementById("createContact");
+
+    const addContact =
+        document.getElementById("addContact");
+
+    const video =
+        document.getElementById("videoCall");
+
+    const message =
+        document.getElementById("sendMessage");
 
     create.style.display = "none";
     addContact.style.display = "none";
     video.style.display = "none";
     message.style.display = "none";
 
-    if(count >= 1) addContact.style.display = "flex";
-    if(count >= 2) create.style.display = "flex";
-    if(count >= 3) video.style.display = "flex";
-    if(count >= 4) message.style.display = "flex";
+    if(count >= 1)
+        addContact.style.display = "flex";
+
+    if(count >= 2)
+        create.style.display = "flex";
+
+    if(count >= 3)
+        video.style.display = "flex";
+
+    if(count >= 4)
+        message.style.display = "flex";
 }
 
 
-/* DELETE */
+/* DELETE BUTTON */
+
 function updateDeleteButton(){
 
-    document.getElementById("deleteButton").style.display =
-        number.length > 0 ? "flex" : "none";
+    document.getElementById(
+        "deleteButton"
+    ).style.display =
+        number.length > 0
+        ? "flex"
+        : "none";
 }
 
 
 /* ADD */
+
 function add(value){
 
     number += value;
 
-    document.getElementById("display").value = number;
+    document.getElementById(
+        "display"
+    ).value = number;
 
     updateContacts();
     updateDeleteButton();
@@ -1032,71 +1225,104 @@ function add(value){
 
 
 /* BACKSPACE */
+
 function backspace(){
 
-    number = number.slice(0,-1);
+    number =
+        number.slice(0,-1);
 
-    document.getElementById("display").value = number;
+    document.getElementById(
+        "display"
+    ).value = number;
 
     updateContacts();
     updateDeleteButton();
 }
 
 
-/* PASTE - يضيف النص الملصوق بجانب الرقم الموجود */
-document.getElementById("display").addEventListener("paste",function(e){
+/* PASTE */
 
-    e.preventDefault();
+document
+.getElementById("display")
+.addEventListener(
+    "paste",
+    function(e){
 
-    let text =
-        (e.clipboardData || window.clipboardData).getData("text");
+        e.preventDefault();
 
-    /* تنظيف النص الملصوق */
-    text = text.replace(/[^0-9*#]/g,"");
+        let text =
+            (
+                e.clipboardData ||
+                window.clipboardData
+            ).getData("text");
 
-    /* إضافة النص بجانب الموجود بدل استبداله */
-    number += text;
+        text =
+            text.replace(
+                /[^0-9*#]/g,
+                ""
+            );
 
-    this.value = number;
+        number += text;
 
-    updateContacts();
-    updateDeleteButton();
+        this.value = number;
 
-});
+        updateContacts();
+        updateDeleteButton();
+
+    }
+);
 
 
 /* INPUT */
-document.getElementById("display").addEventListener("input",function(){
 
-    number = this.value.replace(/[^0-9*#]/g,"");
+document
+.getElementById("display")
+.addEventListener(
+    "input",
+    function(){
 
-    this.value = number;
+        number =
+            this.value.replace(
+                /[^0-9*#]/g,
+                ""
+            );
 
-    updateContacts();
-    updateDeleteButton();
+        this.value = number;
 
-});
+        updateContacts();
+        updateDeleteButton();
+
+    }
+);
 
 
 /* LOADING */
+
 function showLoading(text){
 
-    document.getElementById("loadingText").textContent = text;
+    document.getElementById(
+        "loadingText"
+    ).textContent = text;
 
-    document.getElementById("ussdLoading").style.display = "flex";
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "flex";
 }
-
 
 function hideLoading(){
 
-    document.getElementById("ussdLoading").style.display = "none";
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "none";
 }
 
 
 /* CALL */
+
 function startCall(){
 
-    const pattern = /^\*9\*7\*\d+\*\d+#$/;
+    const pattern =
+        /^\*9\*7\*\d+\*\d+#$/;
 
     if(!pattern.test(number)){
 
@@ -1108,76 +1334,125 @@ function startCall(){
         return;
     }
 
-    showLoading("تشغيل USSD...");
+    showLoading(
+        "تشغيل USSD..."
+    );
 
-    setTimeout(function(){
+    setTimeout(
+        function(){
 
-        hideLoading();
+            hideLoading();
 
-        document.getElementById("menu1").style.display = "flex";
+            document.getElementById(
+                "menu1"
+            ).style.display = "flex";
 
-    },2000);
+        },
+        2000
+    );
 }
 
 
-/* CLOSE MENU */
+/* CLOSE */
+
 function closeMenu(){
 
-    document.getElementById("menu1").style.display = "none";
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
 
-    document.getElementById("password").value = "";
+    document.getElementById(
+        "password"
+    ).value = "";
 
-    document.getElementById("error").style.display = "none";
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 }
 
 
 /* PASSWORD */
+
 function checkPassword(){
 
     const password =
-        document.getElementById("password").value.trim();
+        document.getElementById(
+            "password"
+        ).value.trim();
 
     if(password !== "500500"){
 
-        document.getElementById("error").style.display = "block";
+        document.getElementById(
+            "error"
+        ).style.display = "block";
 
         return;
     }
 
-    document.getElementById("error").style.display = "none";
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 
-    let data = number.replace("*9*7*","");
+    let data =
+        number.replace(
+            "*9*7*",
+            ""
+        );
 
-    data = data.replace(/#$/,"");
+    data =
+        data.replace(
+            /#$/,
+            ""
+        );
 
-    let parts = data.split("*");
+    let parts =
+        data.split("*");
 
-    let phone = parts[0] || "";
-    let amount = parts[1] || "0";
+    let phone =
+        parts[0] || "";
 
-    document.getElementById("menu1").style.display = "none";
+    let amount =
+        parts[1] || "0";
 
-    showLoading("تشغيل USSD...");
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
 
-    setTimeout(function(){
+    showLoading(
+        "تشغيل USSD..."
+    );
 
-        hideLoading();
+    setTimeout(
+        function(){
 
-        document.getElementById("result").innerHTML =
-            `تم تحويل <b>${amount} جنيه</b> لرقم<br>
-            <b>${phone}</b><br>
-            مصاريف الخدمة <b>1 جنيه</b><br>
-            اطلب <b>*9#</b> واشحن`;
+            hideLoading();
 
-        document.getElementById("menu2").style.display = "flex";
+            document.getElementById(
+                "result"
+            ).innerHTML =
 
-        showNotification(phone,amount);
+                `تم تحويل <b>${amount} جنيه</b> لرقم<br>
+                <b>${phone}</b><br>
+                مصاريف الخدمة <b>1 جنيه</b><br>
+                اطلب <b>*9#</b> واشحن`;
 
-    },3200);
+            document.getElementById(
+                "menu2"
+            ).style.display = "flex";
+
+            showNotification(
+                phone,
+                amount
+            );
+
+        },
+        3200
+    );
 }
 
 
 /* NOTIFICATION SOUND */
+
 function playNotificationSound(){
 
     try{
@@ -1186,18 +1461,24 @@ function playNotificationSound(){
             window.AudioContext ||
             window.webkitAudioContext;
 
-        if(!AudioContext) return;
+        if(!AudioContext)
+            return;
 
-        const audio = new AudioContext();
+        const audio =
+            new AudioContext();
 
         if(audio.state === "suspended"){
             audio.resume();
         }
 
-        const oscillator = audio.createOscillator();
-        const gain = audio.createGain();
+        const oscillator =
+            audio.createOscillator();
 
-        oscillator.type = "sine";
+        const gain =
+            audio.createGain();
+
+        oscillator.type =
+            "sine";
 
         oscillator.frequency.setValueAtTime(
             1050,
@@ -1225,38 +1506,56 @@ function playNotificationSound(){
         );
 
         oscillator.connect(gain);
-        gain.connect(audio.destination);
+
+        gain.connect(
+            audio.destination
+        );
 
         oscillator.start();
 
-        oscillator.stop(audio.currentTime + 0.45);
+        oscillator.stop(
+            audio.currentTime + 0.45
+        );
 
-        setTimeout(function(){
-
-            audio.close();
-
-        },600);
+        setTimeout(
+            function(){
+                audio.close();
+            },
+            600
+        );
 
     }catch(e){
 
-        console.log("Notification sound unavailable");
+        console.log(
+            "Notification sound unavailable"
+        );
 
     }
 }
 
 
 /* NOTIFICATION */
-function showNotification(phone,amount){
 
-    document.getElementById("notifText").textContent =
+function showNotification(
+    phone,
+    amount
+){
+
+    document.getElementById(
+        "notifText"
+    ).textContent =
         `تم تحويل ${amount} جنيه إلى ${phone}`;
 
     const notification =
-        document.getElementById("notification");
+        document.getElementById(
+            "notification"
+        );
 
-    notification.style.display = "flex";
+    notification.style.display =
+        "flex";
 
-    notification.style.animation = "none";
+    notification.style.animation =
+        "none";
 
     void notification.offsetWidth;
 
@@ -1265,35 +1564,57 @@ function showNotification(phone,amount){
 
     playNotificationSound();
 
-    setTimeout(function(){
+    setTimeout(
+        function(){
 
-        notification.style.animation =
-            "notificationOut .35s ease";
+            notification.style.animation =
+                "notificationOut .35s ease";
 
-        setTimeout(function(){
+            setTimeout(
+                function(){
 
-            notification.style.display = "none";
+                    notification.style.display =
+                        "none";
 
-        },350);
+                },
+                350
+            );
 
-    },5000);
+        },
+        5000
+    );
 }
 
 
 /* RESET */
+
 function resetAll(){
 
-    document.getElementById("menu1").style.display = "none";
-    document.getElementById("menu2").style.display = "none";
-    document.getElementById("ussdLoading").style.display = "none";
+    document.getElementById(
+        "menu1"
+    ).style.display = "none";
+
+    document.getElementById(
+        "menu2"
+    ).style.display = "none";
+
+    document.getElementById(
+        "ussdLoading"
+    ).style.display = "none";
 
     number = "";
 
-    document.getElementById("display").value = "";
+    document.getElementById(
+        "display"
+    ).value = "";
 
-    document.getElementById("password").value = "";
+    document.getElementById(
+        "password"
+    ).value = "";
 
-    document.getElementById("error").style.display = "none";
+    document.getElementById(
+        "error"
+    ).style.display = "none";
 
     updateContacts();
     updateDeleteButton();
@@ -1301,70 +1622,101 @@ function resetAll(){
 
 
 /* KEYBOARD */
-document.addEventListener("keydown",function(e){
 
-    const display = document.getElementById("display");
+document.addEventListener(
+    "keydown",
+    function(e){
 
-    if(document.activeElement === display){
-        return;
-    }
-
-    if(
-        (e.key >= "0" && e.key <= "9") ||
-        e.key === "*" ||
-        e.key === "#"
-    ){
-        add(e.key);
-    }
-
-    if(e.key === "Backspace"){
-        backspace();
-    }
-
-    if(e.key === "Enter"){
+        const display =
+            document.getElementById(
+                "display"
+            );
 
         if(
-            document.getElementById("menu1").style.display === "flex"
+            document.activeElement ===
+            display
         ){
-            checkPassword();
-        }else{
-            startCall();
+            return;
         }
-    }
 
-});
+        if(
+            (e.key >= "0" &&
+             e.key <= "9") ||
+            e.key === "*" ||
+            e.key === "#"
+        ){
+
+            add(e.key);
+        }
+
+        if(e.key === "Backspace"){
+
+            backspace();
+        }
+
+        if(e.key === "Enter"){
+
+            if(
+                document.getElementById(
+                    "menu1"
+                ).style.display === "flex"
+            ){
+
+                checkPassword();
+
+            }else{
+
+                startCall();
+
+            }
+        }
+
+    }
+);
 
 
 /* CLOCK */
+
 function updateClock(){
 
-    const d = new Date();
+    const d =
+        new Date();
 
-    let hours = d.getHours();
+    let hours =
+        d.getHours();
 
     let minutes =
-        String(d.getMinutes()).padStart(2,"0");
+        String(
+            d.getMinutes()
+        ).padStart(2,"0");
 
-    hours = hours % 12;
+    hours =
+        hours % 12;
 
     if(hours === 0){
         hours = 12;
     }
 
-    document.getElementById("clock").textContent =
+    document.getElementById(
+        "clock"
+    ).textContent =
         hours + ":" + minutes;
 }
 
 updateClock();
 
-setInterval(updateClock,60000);
+setInterval(
+    updateClock,
+    60000
+);
 
 
 /* INITIAL */
+
 updateContacts();
 updateDeleteButton();
 
 </script>
 
 </body>
-</html>
+    </html>
